@@ -1,0 +1,282 @@
+ body {
+margin: 0;
+padding: 0;
+            }
+    .navbar-custom {
+      background-color: #7B0000; /* warna merah gelap */
+    }
+
+    .hero {
+        width: 100%;
+      position: relative;
+      text-align: center;
+      color: #7B0000;
+      font-family: 'Imperial Script';
+      font-size: 3rem;
+      padding: 30px 0;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .nav-link, .navbar-brand {
+      color: white !important;
+    }
+
+    .nav-link.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .auth-links {
+      color: white;
+      margin-left: auto;
+    }
+
+    .auth-links a {
+      color: white;
+      margin-left: 10px;
+    }
+    .hero-image-wrapper img {
+  width: 100vw;
+  height: auto;
+  display: block;
+}
+
+.layanan-card {
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+}
+
+.layanan-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.layanan-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.treatment-header {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .treatment-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        .treatment-card:hover {
+            transform: translateY(-5px);
+        }
+        .treatment-name {
+            font-weight: 600;
+            color: #333;
+        }
+        .treatment-price {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .price-from {
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .btn-view-all {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+        .btn-view-all:hover {
+            background-color: #bb2d3b;
+            color: white;
+        }
+        .treatment-header {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .treatment-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 15px;
+            background-color: white;
+        }
+        .treatment-card:hover {
+            transform: translateY(-5px);
+        }
+        .treatment-name {
+            font-weight: 600;
+            color: #333;
+        }
+        .treatment-price {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .price-from {
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .btn-view-all {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+        .btn-view-all:hover {
+            background-color: #bb2d3b;
+            color: white;
+        }
+        .salon-image {
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            object-fit: cover;
+        }
+        .content-wrapper {
+            background-color: rgb(242, 241, 241);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        /* Testimonial Styles */
+        .testimonial-profile {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #dc3545;
+            margin-bottom: 15px;
+        }
+        .testimonial-card {
+            background-color: #999797;
+            text-align: center;
+            padding: 30px 25px;
+        }
+        .testimonial-quote {
+            font-size: 24px;
+            color: #dc3545;
+            margin-bottom: 10px;
+        }
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+            margin-top: 15px;
+        }
+        .testimonial-role {
+            color: #6c757d;
+            font-size: 0.9rem;
+            display: block;
+            margin-top: 5px;
+        }
+        .testimonial-header{
+            color: #6B0606;
+        }
+        .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+        background-color: #dc3545;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+    .carousel-control-prev {
+        left: -20px;
+    }
+    .carousel-control-next {
+        right: -20px;
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        filter: brightness(0) invert(1);
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .history-section {
+      background-color: #fff;
+      padding: 80px 0;
+    }
+    .history-title {
+      color: #800000; /* Burgundy */
+      font-weight: bold;
+    }
+    .history-text {
+      color: #777;
+    }
+    .read-more {
+      color: #800000;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .read-more:hover {
+      text-decoration: underline;
+    }
+    .history-img {
+      border-radius: 10px;
+      max-width: 100%;
+      height: auto;
+    }
+    .location-section {
+      background-color: #fff;
+      padding: 80px 0;
+    }
+    .location-title {
+      color: #800000;
+      font-weight: bold;
+    }
+    .map-container {
+      width: 100%;
+      height: 700px;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .bg-footer {
+  background-color: #debaa0;
+}
+
+.footer-logo {
+  font-family: 'Dancing Script', cursive;
+  color: #800000;
+  font-size: 2rem;
+}
+.footer-with-bg {
+    background-image: url("{{ asset('assets/img/bunga.png') }}");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    background-color: #debaa0;
+    min-height: 300px;
+    padding: 3rem 0;
+  }
