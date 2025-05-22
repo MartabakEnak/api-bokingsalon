@@ -11,36 +11,7 @@
     </head>
     <body>
          <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-custom px-4">
-  <div class="container">
-
-    <!-- Kiri: Brand -->
-    <a class="navbar-brand" href="#"><i class="bi bi-instagram"></i> <i class="bi bi-whatsapp"></i></a>
-
-    <!-- Toggle button (untuk tampilan mobile) -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Tengah: Menu -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Riwayat</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-      </ul>
-    </div>
-
-    <!-- Kanan: Login/Register -->
-    <div class="auth-links d-none d-lg-flex">
-      <a href="#" class="ms-3 text-white"><strong>Login</strong></a>
-      <a href="#" class="ms-3 text-white">Register</a>
-    </div>
-
-  </div>
-</nav>
+@include('partials.navbar')
 
   <!-- Hero Title -->
   <div class="hero bg-white">
@@ -284,34 +255,7 @@
 </section>
 
 <!-- footer -->
-<footer class="footer-with-bg text-dark py-5">
-  <div class="container">
-    <div class="row align-items-start">
-      <!-- Kiri -->
-      <div class="col-md-4 mb-4 mb-md-0">
-        <h3 class="footer-logo mb-3">Salon Asih</h3>
-        <p class="text-secondary mb-1">Temukan Kecantikan Anda</p>
-        <p class="text-secondary">Pesan Kebutuhan Anda.</p>
-      </div>
-
-      <!-- Tengah -->
-      <div class="col-md-4 mb-4 mb-md-0">
-        <h5 class="fw-bold text-dark">Hubungi Kami</h5>
-        <p><a href="mailto:abcde@gmail.com" class="text-muted">abcde@gmail.com</a></p>
-        <p class="text-muted">+62 8123456789</p>
-      </div>
-
-      <!-- Kanan -->
-      <div class="col-md-4">
-        <h5 class="fw-bold text-dark">Media Sosial</h5>
-        <div class="d-flex align-items-center gap-3">
-          <a href="#" class="text-dark fs-4"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="text-dark fs-4"><i class="bi bi-whatsapp"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+@include('partials.footer')
   <!-- Bootstrap JS (Opsional) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Icon (Opsional) -->
