@@ -36,9 +36,10 @@
 
     <!-- Kanan: Login/Register -->
     <div class="auth-links d-none d-lg-flex">
-      <a href="#" class="ms-3 text-white"><strong>Login</strong></a>
-      <a href="#" class="ms-3 text-white">Register</a>
-    </div>
+  <a href="{{ route('login') }}" class="ms-3 text-white"><strong>Login</strong></a>
+  <a href="{{ route('register') }}" class="ms-3 text-white">Register</a>
+
+</div>
 
   </div>
 </nav>
