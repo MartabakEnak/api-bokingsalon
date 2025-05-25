@@ -513,3 +513,255 @@ padding: 0;
         margin-top: -60px;
       }
     }
+
+    /* about Us */
+    .image-wrapper {
+    position: relative;
+    width: 85%;               /* Biar ada space kiri kanan */
+    max-width: 1297px;        /* Biar sesuai resolusi */
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tim-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(70%);   /* Bikin lebih gelap */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55); /* Efek shadow gelap transparan */
+    z-index: 1;
+}
+
+
+.section-hero {
+      padding: 80px 0;
+    }
+
+    .hero-title {
+      color: #6B0606; /* Merah tua */
+      font-weight: 700;
+    }
+
+    .hero-text {
+      color: #6B0606;
+      font-size: 1rem;
+      line-height: 1.75;
+      text-align: justify;
+    }
+
+    .hero-image-box {
+      background-color: rgba(128, 0, 0, 0.15);
+      border-radius: 8px;
+      min-height: 300px;
+    }
+
+
+    .section-services {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #6B0606;
+      font-weight: 700;
+      margin-bottom: 60px;
+      font-family: 'Abhaya Libre', serif;
+  font-size: 32px; /* opsional */
+  font-weight: 700; /* opsional, bisa 400, 600, 700 */
+
+
+
+    }
+
+    .service-card {
+      position: relative;
+      background-color: #6B0606;
+      color: #fff;
+      border-radius: 0 100px 20px 20px;
+      padding: 30px;
+      margin-bottom: 60px;
+      overflow: hidden;
+    }
+
+    .service-card .img-outside {
+      position: absolute;
+      left: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      max-height: 120%;
+      z-index: 1;
+    }
+
+    .service-content {
+      margin-left: auto;
+      padding-left: 50%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-button {
+      background-color: #fff;
+      color: #6B0606;
+      border: none;
+      padding: 10px 24px;
+      font-weight: 600;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .service-card {
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .service-card .img-outside {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .service-content {
+        padding-left: 0;
+        margin-left: 0;
+      }
+    }
+    .service-card-right {
+  background-color: #6B0606;
+  color: #fff;
+  border-radius: 120px 0 30px 30px; /* radius besar di kiri atas */
+  padding: 50px;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.service-content-right {
+  position: relative;
+  z-index: 2;
+  max-width: 50%;
+}
+
+.image-inside-card-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* space jarak  */
+.service-wrapper {
+  margin-bottom: 60px; /* Tambah jarak bawah kartu ke-2 */
+}
+
+.service-card {
+  margin-top: 40px; /* Opsional: tambah jarak atas kartu ke-3 */
+}
+
+
+.service-card-1 {
+  position: relative;
+  background-color: #6B0606;
+  color: #fff;
+  border-radius: 0 100px 20px 20px;
+  padding: 0px;
+  margin-bottom: 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Elemen mulai dari kiri */
+  gap: 30px; /* Spasi antara gambar dan teks */
+}
+
+.service-card-1 img {
+  width: 300px; /* Ubah ukuran sesuai keinginan */
+  height: auto;
+  object-fit: contain;
+  align-self: flex-start; /* Posisikan gambar di pojok kiri atas */
+  margin-left: -20px;
+}
+
+/* riwayat */
+
+.history-container {
+  background-color: #6B0606;
+  color: white;
+  border-radius: 6px;
+  padding: 30px;
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+  min-height: 500px; /* ini yang menambah tinggi meskipun kosong */
+  box-sizing: border-box;
+  margin-bottom: 60px;
+}
+
+.history-container h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+thead th {
+  color: #fff;
+  font-weight: 600;
+}
+
+tbody td {
+  background-color: #e6e6e6;
+  color: black;
+  border-right: 1px solid #ccc;
+}
+
+tbody td:last-child {
+  border-right: none;
+}
+
+.tanggal {
+  color: red;
+  font-weight: 500;
+}
+
+.waktu {
+  color: #b30000;
+  font-weight: 500;
+}
+
+.layanan {
+  color: #0000ee;
+  text-decoration: none;
+}
+
+.status.diterima {
+  color: green;
+  font-weight: 600;
+}
