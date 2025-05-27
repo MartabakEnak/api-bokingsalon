@@ -34,96 +34,104 @@
     </section>
 
     <!-- Service & Prices List Section -->
-    <section class="service-list-section py-5">
-        <div class="container">
-            <div class="row g-5">
-                <!-- Service 1 -->
-                <div class="col-md-6">
-                    <div>
-                        <span class="fw-bold">01.</span>
-                        <h4 class="mt-2 mb-3 fw-bold">SULAM</h4>
-                        <ul class="list-unstyled">
-                            <li>Daily make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Night make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Bridal make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Ocassion make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Television make up <span class="float-end text-muted">from $35</span></li>
-                        </ul>
+                                <section class="service-list-section py-5">
+                    <div class="container">
+                        <!-- Service 1: SULAM (gambar kiri, konten kanan) -->
+                        <div class="row mb-5 align-items-center">
+                            <div class="col-md-5 text-center">
+                                <img src="{{ asset('assets/img/sulam.png') }}" alt="Sulam" class="rounded" style="width:340px; height:auto; object-fit:cover;">
+                            </div>
+                            <div class="col-md-7">
+                                <h4 class="mb-3 fw-bold" style="color:#7B0000;">SULAM</h4>
+                                <ul class="list-unstyled">
+                                    <li>Daily make up <span class="float-end text-muted">from $35</span></li>
+                                    <li>Night make up <span class="float-end text-muted">from $35</span></li>
+                                    <li>Bridal make up <span class="float-end text-muted">from $35</span></li>
+                                    <li>Ocassion make up <span class="float-end text-muted">from $35</span></li>
+                                    <li>Television make up <span class="float-end text-muted">from $35</span></li>
+                                </ul>
+                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">Booking</a>
+                            </div>
+                        </div>
+                        <!-- Service 2: HAIR STYLING (konten kiri, gambar kanan) -->
+                        <div class="row mb-5 align-items-center flex-row-reverse">
+                            <div class="col-md-5 text-center">
+                                <img src="{{ asset('assets/img/hairstyling.png') }}" alt="Hair Styling" class="rounded" style="width:340px; height:auto; object-fit:cover;">
+                            </div>
+                            <div class="col-md-7">
+                                <h4 class="mb-1 fw-bold" style="color:#7B0000;">Hair styling</h4>
+                                <ul class="list-unstyled">
+                                    <li>Simple haircut <span class="float-end text-muted">from Rp. 100.000</span></li>
+                                    <li>Hair Styling <span class="float-end text-muted">from Rp. 100.000</span></li>
+                                    <li>Full hair color <span class="float-end text-muted">from Rp. 100.000</span></li>
+                                    <li>Protein treatment <span class="float-end text-muted">from Rp. 100.000</span></li>
+                                    <li>Hair mask <span class="float-end text-muted">from Rp. 100.000</span></li>
+                                </ul>
+                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">Booking</a>
+                            </div>
+                        </div>
+                        <!-- Service 3: NAIL CARE (gambar kiri, konten kanan) -->
+                        <div class="row mb-5 align-items-center">
+                            <div class="col-md-5 text-center">
+                                <img src="{{ asset('assets/img/nail.png') }}" alt="Nail Care" class="rounded" style="width:340px; height:auto; object-fit:cover;">
+                            </div>
+                            <div class="col-md-7">
+                                <h4 class="mb-3 fw-bold" style="color:#7B0000;">NAIL CARE</h4>
+                                <ul class="list-unstyled">
+                                    <li>Manicure <span class="float-end text-muted">from Rp. 80.000</span></li>
+                                    <li>Pedicure <span class="float-end text-muted">from Rp. 90.000</span></li>
+                                    <li>Nail Art <span class="float-end text-muted">from Rp. 120.000</span></li>
+                                    <li>Gel Polish <span class="float-end text-muted">from Rp. 100.000</span></li>
+                                    <li>Nail Spa <span class="float-end text-muted">from Rp. 110.000</span></li>
+                                </ul>
+                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">Booking</a>
+                            </div>
+                        </div>
+                        <!-- Service 4: RIAS (konten kiri, gambar kanan) -->
+                        <div class="row mb-5 align-items-center flex-row-reverse">
+                            <div class="col-md-5 text-center">
+                                <img src="{{ asset('assets/img/rias.png') }}" alt="Rias" class="rounded" style="width:340px; height:auto; object-fit:cover;">
+                            </div>
+                            <div class="col-md-7">
+                                <h4 class="mb-3 fw-bold" style="color:#7B0000;">RIAS</h4>
+                                <ul class="list-unstyled">
+                                    <li>Rias Wisuda <span class="float-end text-muted">from Rp. 200.000</span></li>
+                                    <li>Rias Pesta <span class="float-end text-muted">from Rp. 250.000</span></li>
+                                    <li>Rias Pengantin <span class="float-end text-muted">from Rp. 500.000</span></li>
+                                    <li>Rias Foto <span class="float-end text-muted">from Rp. 300.000</span></li>
+                                    <li>Rias Keluarga <span class="float-end text-muted">from Rp. 150.000</span></li>
+                                </ul>
+                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">Booking</a>
+                            </div>
+                        </div>
+                        <!-- Service 5: MASSAGE (gambar kiri, konten kanan) -->
+                        <div class="row mb-5 align-items-center">
+                            <div class="col-md-5 text-center">
+                                <img src="{{ asset('assets/img/massage.jpg') }}" alt="Massage" class="rounded" style="width:340px; height:auto; object-fit:cover;">
+                            </div>
+                            <div class="col-md-7">
+                                <h4 class="mb-3 fw-bold" style="color:#7B0000;">MASSAGE</h4>
+                                <ul class="list-unstyled">
+                                    <li>Full Body Massage <span class="float-end text-muted">from Rp. 150.000</span></li>
+                                    <li>Reflexology <span class="float-end text-muted">from Rp. 100.000</span></li>
+                                    <li>Back Massage <span class="float-end text-muted">from Rp. 90.000</span></li>
+                                    <li>Head Massage <span class="float-end text-muted">from Rp. 80.000</span></li>
+                                    <li>Totok Wajah <span class="float-end text-muted">from Rp. 70.000</span></li>
+                                </ul>
+                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">Booking</a>
+                            </div>
+                        </div>
+                        <!-- Service 6: KOSONG (konten kiri, gambar kanan) -->
+                        <div class="row mb-5 align-items-center flex-row-reverse">
+                            <div class="col-md-5 text-center">
+                                <img src="{{ asset('assets/img/empty.jpg') }}" alt="Empty" class="rounded" style="width:340px; height:auto; object-fit:cover; opacity:0.3;">
+                            </div>
+                            <div class="col-md-7">
+                                <!-- Kosong -->
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- Service 2 -->
-                <div class="col-md-6">
-                    <div>
-                        <span class="fw-bold">02.</span>
-                        <h4 class="mt-2 mb-3 fw-bold">HAIR STYLING</h4>
-                        <ul class="list-unstyled">
-                            <li>Daily make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Night make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Bridal make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Ocassion make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Television make up <span class="float-end text-muted">from $35</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 3 -->
-                <div class="col-md-6">
-                    <div>
-                        <span class="fw-bold">03.</span>
-                        <h4 class="mt-2 mb-3 fw-bold">NAIL CARE</h4>
-                        <ul class="list-unstyled">
-                            <li>Daily make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Night make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Bridal make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Ocassion make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Television make up <span class="float-end text-muted">from $35</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 4 -->
-                <div class="col-md-6">
-                    <div>
-                        <span class="fw-bold">04.</span>
-                        <h4 class="mt-2 mb-3 fw-bold">RIAS</h4>
-                        <ul class="list-unstyled">
-                            <li>Daily make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Night make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Bridal make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Ocassion make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Television make up <span class="float-end text-muted">from $35</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 5 -->
-                <div class="col-md-6">
-                    <div>
-                        <span class="fw-bold">05.</span>
-                        <h4 class="mt-2 mb-3 fw-bold">MASSAGE</h4>
-                        <ul class="list-unstyled">
-                            <li>Daily make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Night make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Bridal make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Ocassion make up <span class="float-end text-muted">from $35</span></li>
-                            <li>Television make up <span class="float-end text-muted">from $35</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 6 -->
-                {{-- <div class="col-md-6">
-                    <div>
-                        <span class="fw-bold">06.</span>
-                        <h4 class="mt-2 mb-3 fw-bold">SPA</h4>
-                        <ul class="list-unstyled">
-                            <li>Body scrub <span class="float-end text-muted">from $40</span></li>
-                            <li>Body mask <span class="float-end text-muted">from $45</span></li>
-                            <li>Facial <span class="float-end text-muted">from $30</span></li>
-                            <li>Reflexology <span class="float-end text-muted">from $25</span></li>
-                            <li>Totok wajah <span class="float-end text-muted">from $20</span></li>
-                        </ul>
-                    </div>
-                </div> --}}
-            </div>
-        </div>
-    </section>
+                </section>
 
     @include('partials.footer')
 </body>
