@@ -545,7 +545,7 @@ padding: 0;
     position: relative;
     width: 85%;               /* Biar ada space kiri kanan */
     max-width: 1297px;        /* Biar sesuai resolusi */
-    height: auto;
+    height: 600px;
     margin: 0 auto;
     border-radius: 12px;
     overflow: hidden;

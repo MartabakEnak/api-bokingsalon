@@ -13,100 +13,10 @@
 </head>
 <body>
     @include('partials.navbar')
-
-      <!-- Hero Title -->
     <!-- Hero Title -->
-    <div class="text-center my-5">
-        <h1 class="fw-bold" style="font-family: 'Imperial Script', cursive; color: #7B0000; font-size: 60px;">Service
-        </h1>
-        <p class="text-muted">Services and prices</p>
-    </div>
-
-    <!-- Services -->
-    <div class="container">
-
-        <!-- Section 1: SULAM -->
-        <div class="row align-items-center mb-5">
-            <div class="col-md-6">
-                <img src="{{ asset('assets/img/alis.jpg') }}" class="img-fluid rounded w-100"
-                    style="height: 300px; object-fit: cover;" alt="Sulam">
-            </div>
-            <div class="col-md-6">
-                <h4 class="fw-bold text-danger">SULAM</h4>
-                @foreach ([['Sulam Alis', '1.500.000'], ['Sulam Bibir', '1.800.000'], ['Sulam Eyeliner', '1.300.000']] as [$item, $price])
-                    <div class="d-flex justify-content-between border-bottom py-1">
-                        <span>{{ $item }}</span><span>Rp {{ $price }}</span>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-
-        <!-- Section 2: Hair Styling -->
-        <div class="row align-items-center mb-5 flex-md-row-reverse">
-            <div class="col-md-6">
-                <img src="{{ asset('assets/img/hair.jpg') }}" class="img-fluid rounded w-100"
-                    style="height: 300px; object-fit: cover;" alt="Hair Styling">
-            </div>
-            <div class="col-md-6">
-                <h4 class="fw-bold text-danger">Hair Styling</h4>
-                @foreach ([['Cutting', '70.000'], ['Hair Coloring', '250.000'], ['Smoothing', '300.000'], ['Blow & Styling', '100.000']] as [$item, $price])
-                    <div class="d-flex justify-content-between border-bottom py-1">
-                        <span>{{ $item }}</span><span>Rp {{ $price }}</span>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-
-        <!-- Section 3: Nail Care -->
-        <div class="row align-items-center mb-5">
-            <div class="col-md-6">
-                <img src="{{ asset('assets/img/nail.png') }}" class="img-fluid rounded w-100"
-                    style="height: 300px; object-fit: cover;" alt="Nail Care">
-            </div>
-            <div class="col-md-6">
-                <h4 class="fw-bold text-danger">Nail Care</h4>
-                @foreach ([['Manicure', '60.000'], ['Pedicure', '70.000'], ['Nail Art', '100.000']] as [$item, $price])
-                    <div class="d-flex justify-content-between border-bottom py-1">
-                        <span>{{ $item }}</span><span>Rp {{ $price }}</span>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-
-        <!-- Section 4: Rias -->
-        <div class="row align-items-center mb-5 flex-md-row-reverse">
-            <div class="col-md-6">
-                <img src="{{ asset('assets/img/rias.png') }}" class="img-fluid rounded w-100"
-                    style="height: 300px; object-fit: cover;" alt="Rias">
-            </div>
-            <div class="col-md-6">
-                <h4 class="fw-bold text-danger">Rias</h4>
-                @foreach ([['Rias Wisuda', '300.000'], ['Rias Pengantin', '2.000.000'], ['Rias Casual', '250.000']] as [$item, $price])
-                    <div class="d-flex justify-content-between border-bottom py-1">
-                        <span>{{ $item }}</span><span>Rp {{ $price }}</span>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-
-        <!-- Section 5: Massage -->
-        <div class="row align-items-center mb-5">
-            <div class="col-md-6">
-                <img src="{{ asset('assets/img/facial.jpg') }}" class="img-fluid rounded w-100"
-                    style="height: 300px; object-fit: cover;" alt="Massage">
-            </div>
-            <div class="col-md-6">
-                <h4 class="fw-bold text-danger">Facial</h4>
-                @foreach ([['Full Body', '150.000'], ['Back & Shoulder', '80.000'], ['Reflexology', '70.000']] as [$item, $price])
-                    <div class="d-flex justify-content-between border-bottom py-1">
-                        <span>{{ $item }}</span><span>Rp {{ $price }}</span>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-
-
+  <div class="hero bg-white">
+    <h1>Service</h1>
+  </div>
     <!-- Hero Image (Full Width) -->
     <div class="hero-image-wrapper mx-0 px-0">
         <img src="{{ asset('assets/img/hero.png') }}" alt="hero-image" class="w-100 d-block">
@@ -132,13 +42,14 @@
                             <div class="col-md-7">
                                 <h4 class="mb-3 fw-bold" style="color:#7B0000;">SULAM</h4>
                                 <ul class="list-unstyled">
-                                    <li>Daily make up <span class="float-end text-muted">from $35</span></li>
-                                    <li>Night make up <span class="float-end text-muted">from $35</span></li>
-                                    <li>Bridal make up <span class="float-end text-muted">from $35</span></li>
-                                    <li>Ocassion make up <span class="float-end text-muted">from $35</span></li>
-                                    <li>Television make up <span class="float-end text-muted">from $35</span></li>
+                                    <li>Daily make up <span class="float-end text-muted">from 100.000</span></li>
+                                    <li>Night make up <span class="float-end text-muted">from 100.000</span></li>
+                                    <li>Bridal make up <span class="float-end text-muted">from 100.000</span></li>
+                                    <li>Ocassion make up <span class="float-end text-muted">from 100.000</span></li>
+                                    <li>Television make up <span class="float-end text-muted">from 100.000</span></li>
                                 </ul>
                                 <a href="contacUs" class="fw-bold" style="color:#7B0000;">Booking</a>
+                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
                             </div>
                         </div>
                         <!-- Service 2: HAIR STYLING (konten kiri, gambar kanan) -->
@@ -156,6 +67,7 @@
                                     <li>Hair mask <span class="float-end text-muted">from Rp. 100.000</span></li>
                                 </ul>
                                 <a href="contacUs" class="fw-bold" style="color:#7B0000;">Booking</a>
+                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
                             </div>
                         </div>
                         <!-- Service 3: NAIL CARE (gambar kiri, konten kanan) -->
@@ -173,6 +85,7 @@
                                     <li>Nail Spa <span class="float-end text-muted">from Rp. 110.000</span></li>
                                 </ul>
                                 <a href="contacUs" class="fw-bold" style="color:#7B0000;">Booking</a>
+                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
                             </div>
                         </div>
                         <!-- Service 4: RIAS (konten kiri, gambar kanan) -->
@@ -190,6 +103,7 @@
                                     <li>Rias Keluarga <span class="float-end text-muted">from Rp. 150.000</span></li>
                                 </ul>
                                 <a href="contacUs" class="fw-bold" style="color:#7B0000;">Booking</a>
+                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
                             </div>
                         </div>
                         <!-- Service 5: MASSAGE (gambar kiri, konten kanan) -->
@@ -207,9 +121,10 @@
                                     <li>Totok Wajah <span class="float-end text-muted">from Rp. 70.000</span></li>
                                 </ul>
                                 <a href="contacUs" class="fw-bold" style="color:#7B0000;">Booking</a>
+                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
                             </div>
                         </div>
-                        <!-- Service 6: KOSONG (konten kiri, gambar kanan) -->
+                        {{-- <!-- Service 6: KOSONG (konten kiri, gambar kanan) -->
                         <div class="row mb-5 align-items-center flex-row-reverse">
                             <div class="col-md-5 text-center">
                                 <img src="{{ asset('assets/img/empty.jpg') }}" alt="Empty" class="rounded" style="width:340px; height:auto; object-fit:cover; opacity:0.3;">
@@ -217,7 +132,7 @@
                             <div class="col-md-7">
                                 <!-- Kosong -->
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </section>
 

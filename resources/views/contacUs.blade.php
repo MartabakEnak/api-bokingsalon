@@ -63,13 +63,10 @@
     <div class="row justify-content-center">
       <div class="col-lg-10 booking-box">
         <div class="row align-items-center">
-          <!-- Image -->
-          <div class="col-md-5 d-flex justify-content-center align-items-center booking-image-wrapper">
-            <img src="{{ asset('assets/img/member.png') }}" class="img-fluid rounded img-member-booking" alt="Model Salon">
-        </div>
+
           <!-- Form -->
           <form method="POST" action="{{ route('pemesanan.store') }}">
-  @csrf
+    @csrf
   <div class="label-title mb-1">SALON ASIH</div>
   <div class="form-section-title mb-4">Book Appointment</div>
 
@@ -118,7 +115,7 @@
     </div>
   </div>
 
-  <button type="submit" class="btn btn-maroon mt-3">Pesan</button>
+  <button type="submit" class="btn btn-maroon mt-3" style="background-color: maroon; color: white;">Pesan</button>
 </form>
         </div>
       </div>
