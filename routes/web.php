@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PemesananController;
+use App\Http\Controllers\Api\PemesananApiController;
 
 
 Route::get('/', function () {return view('welcome');});
@@ -10,6 +13,14 @@ Route::get('/aboutUs', function () {return view('aboutUs'); });
 Route::get('/welcome', function () {return view('welcome'); });
 Route::get('/riwayat', function () {return view('riwayat'); });
 Route::get('/service', function () {return view('service'); });
+
+
+Route::get('/admin', [OrderController::class, 'index'])->name('admin');
+
+Route::post('/pemesanan', [PemesananController::class, 'store'])->name('pemesanan.store');
+Route::get('/pemesanan', [PemesananController::class, 'index']);
+
+Route::get('/pemesanan', [PemesananApiController::class, 'index']);
 
 
 
