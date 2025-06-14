@@ -25,14 +25,25 @@
 
     <!-- Tengah: Menu -->
     <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link active" href="welcome">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="service">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="riwayat">Riwayat</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacUs">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="aboutUs">About Us</a></li>
-      </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link {{ Request::is('welcome') ? 'active' : '' }}" href="welcome">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{ Request::is('service') ? 'active' : '' }}" href="service">Services</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{ Request::is('riwayat') ? 'active' : '' }}" href="riwayat">Riwayat</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{ Request::is('contacUs') ? 'active' : '' }}" href="contacUs">Contact Us</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{ Request::is('aboutUs') ? 'active' : '' }}" href="aboutUs">About Us</a>
+            </li>
+        </ul>
     </div>
+
 
     <!-- Kanan: Login/Register -->
     <div class="auth-links d-none d-lg-flex">

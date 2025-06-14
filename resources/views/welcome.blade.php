@@ -148,7 +148,7 @@
                     </div>
 
                     <div class="text-center mt-4">
-                        <button class="btn btn-view-all">View all</button>
+                        <a class=" {{ Request::is('service') ? 'active' : '' }}" href="service">View all</a>
                     </div>
                 </div>
             </div>
@@ -227,23 +227,23 @@
     </div>
 <!-- History -->
     <section class="history-section text-center">
-  <div class="container">
-    <h2 class="history-title mb-3">History</h2>
-    <p class="text-muted">Eleifend arcu non lorem justo in tempus purus gravida tortor egestas sed feugiat elementum</p>
+        <div class="container">
+            <h2 class="history-title mb-3">History</h2>
+            <p class="text-muted">Eleifend arcu non lorem justo in tempus purus gravida tortor egestas sed feugiat elementum</p>
 
-    <div class="row align-items-center mt-5 text-start">
-      <div class="col-md-6">
-        <img src="{{ asset('assets/img/fotopegawai.png') }}" alt="Salon Asih Team" class="history-img">
-      </div>
-      <div class="col-md-6 history-text">
-        <p>Salon Asih berdiri sejak tahun 1991, berlokasi di Jln. Pulau Bungin No.113, Denpasar Selatan. Sejak awal, Salon Asih hadir dengan satu tujuan memberikan pelayanan kecantikan terbaik yang mengutamakan kenyamanan, profesionalitas, dan hasil yang memuaskan.</p>
-        <p>Dengan pengalaman lebih dari tiga dekade, Salon Asih telah menjadi pilihan terpercaya bagi para wanita Bali dan sekitarnya yang ingin tampil cantik dan percaya diri.</p>
-        <p>Kami terus berkembang mengikuti tren dan teknologi terkini demi menghadirkan perawatan yang aman, modern, dan berkualitas tinggi.</p>
-        <a href="#" class="read-more">Read more</a>
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="row align-items-center mt-5 text-start">
+            <div class="col-md-6">
+                <img src="{{ asset('assets/img/fotopegawai.png') }}" alt="Salon Asih Team" class="history-img">
+            </div>
+            <div class="col-md-6 history-text">
+                <p>Salon Asih berdiri sejak tahun 1991, berlokasi di Jln. Pulau Bungin No.113, Denpasar Selatan. Sejak awal, Salon Asih hadir dengan satu tujuan memberikan pelayanan kecantikan terbaik yang mengutamakan kenyamanan, profesionalitas, dan hasil yang memuaskan.</p>
+                <p>Dengan pengalaman lebih dari tiga dekade, Salon Asih telah menjadi pilihan terpercaya bagi para wanita Bali dan sekitarnya yang ingin tampil cantik dan percaya diri.</p>
+                <p>Kami terus berkembang mengikuti tren dan teknologi terkini demi menghadirkan perawatan yang aman, modern, dan berkualitas tinggi.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+            </div>
+        </div>
+    </section>
 
 <section class="location-section text-center">
   <div class="container">
