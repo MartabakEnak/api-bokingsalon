@@ -11,6 +11,11 @@ Route::get('/welcome', function () {return view('welcome'); });
 Route::get('/riwayat', function () {return view('riwayat'); });
 Route::get('/service', function () {return view('service'); });
 
+Route::get('/contacUs2', function () {return view('contacUs2'); });
+Route::get('/aboutUs2', function () {return view('aboutUs2'); });
+Route::get('/welcome2', function () {return view('welcome2'); });
+Route::get('/riwayat2', function () {return view('riwayat2'); });
+Route::get('/service2', function () {return view('service2'); });
 
 
 

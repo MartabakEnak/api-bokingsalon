@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>About Us</title>
+     @vite(['resources/css/app.css', 'resources/js/app.js']) {{-- Kalau pakai Vite --}}
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Salon Asih</title>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -12,7 +13,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
-    @include('partials.navbar')
+    @include('partials.navbarlogin')
     {{-- @if (Auth::check()) --}}
         {{-- Header untuk pengguna yang sudah login --}}
         {{-- @include('partials.navbarlogin') --}}
@@ -22,9 +23,10 @@
     {{-- @endif --}}
 
   <!-- Hero Title -->
-  <div class="hero bg-white">
-    <h1>about us</h1>
-  </div>
+  <div class="container mx-auto py-6">
+    <div class="hero bg-white">
+      <h1>about us</h1>
+    </div>
 
 <div class="image-wrapper">
     <img src="{{ asset('assets/img/fotopegawai.png') }}" alt="Tim Salon" class="tim-image">
@@ -101,6 +103,8 @@
   </div>
 
 </div>
+  </div>
+  
     @include('partials.footer')
 </body>
 </html>
