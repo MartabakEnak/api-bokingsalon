@@ -23,7 +23,7 @@
 
             <!-- Logo -->
             <div class="text-center">
-                <img src="{{ asset('assets/img/vector.png') }}" alt="Logo"
+                <img src="{{ asset('assets/img/logo_login.png') }}" alt="Logo"
                     style="width: 60px; margin-bottom: 1rem;">
             </div>
 
