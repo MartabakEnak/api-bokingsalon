@@ -1,47 +1,71 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<!DOCTYPE html>
+<html lang="en">
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Salon Asih</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body style="margin: 0; font-family: 'Segoe UI', sans-serif;">
+
+    <!-- Background Container -->
+    <div class="vh-100 vw-100 d-flex justify-content-center align-items-center"
+        style="background-color: #6B0606;">
+
+        <!-- Card Login -->
+        <div class="card border-0 shadow"
+            style="max-width: 500px; width: 100%; border-radius: 20px; padding: 2.5rem; background-color: rgba(255, 255, 255, 0.95);">
+
+            <!-- Logo -->
+            <div class="text-center">
+                <img src="{{ asset('assets/img/logo_login.png') }}" alt="Logo"
+                    style="width: 60px; margin-bottom: 1rem;">
+            </div>
+
+            <h2 class="text-center fw-bold mb-1">Welcome Back!</h2>
+            <p class="text-center text-muted mb-4">Enter your credential to access your account</p>
+
+            <!-- Form Login-->
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+
+                <div class="position-relative mb-4">
+                    <i class="bi bi-person-fill position-absolute"
+                        style="left: 15px; top: 50%; transform: translateY(-50%); color: #7B0000;"></i>
+                    <input type="email" name="email" class="form-control ps-5" placeholder="Masukan Email" required
+                        style="border-radius: 10px; background-color: #e0e0e0; border: none;">
+                </div>
+
+                <div class="position-relative mb-4">
+                    <i class="bi bi-lock-fill position-absolute"
+                        style="left: 15px; top: 50%; transform: translateY(-50%); color: #7B0000;"></i>
+                    <input type="password" name="password" class="form-control ps-5" placeholder="Masukan password"
+                        required style="border-radius: 10px; background-color: #e0e0e0; border: none;">
+                </div>
+
+                <!-- Tombol Login -->
+                <div class="d-grid mb-3">
+                    <button type="submit" class="btn"
+                        style="background-color: #7B0000; color: white; font-weight: bold; border-radius: 10px;">Login</button>
+                </div>
+
+                <!-- Link Register -->
+                <p class="text-center mt-3 text-muted">
+                    Belum punya akun?
+                    <a href="{{ route('register') }}" style="color: #7B0000; font-weight: bold; text-decoration: none;">
+                        Klik di sini
+                    </a>
+                </p>
+            </form>
+
         </div>
+    </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+</body>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</html>

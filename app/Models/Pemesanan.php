@@ -20,9 +20,11 @@ class Pemesanan extends Model
         'tanggal',
         'jam',
         'status_pembayaran',
+        'user_id'
     ];
 
     public function layanan()
+<<<<<<< HEAD
 {
     return $this->belongsTo(Layanan::class, 'layanan_id');
 }
@@ -31,4 +33,9 @@ class Pemesanan extends Model
 {
     return $this->belongsTo(User::class);
 }
+=======
+    {
+       return $this->belongsTo(\App\Models\Layanan::class);
+    }
+>>>>>>> 1d3ce7a7e30c78f0ff25b72277b171db8c6c15ed
 }

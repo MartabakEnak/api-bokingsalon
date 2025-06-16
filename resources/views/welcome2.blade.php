@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Salon Asih</title>
+         @vite(['resources/css/app.css', 'resources/js/app.js']) {{-- Kalau pakai Vite --}}
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Import dari Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
     </head>
     <body>
          <!-- Navbar -->
-@include('partials.navbar')
+@include('partials.navbarlogin')
 {{-- @if (Auth::check()) --}}
         {{-- Header untuk pengguna yang sudah login --}}
         {{-- @include('partials.navbarlogin')

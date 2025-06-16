@@ -26,17 +26,33 @@
     <!-- Tengah: Menu -->
     <div class=" justify-content-center" id="navbarContent">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link active" href="welcome">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="service">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="riwayat">Riwayat</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacUs">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="aboutUs">About Us</a></li>
+        <li class="nav-item">
+            <a class="nav-link {{ Request::is('welcome2') ? 'active' : '' }}" href="welcome2">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{ Request::is('service2') ? 'active' : '' }}" href="service2">Services</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{ Request::is('riwayat2') ? 'active' : '' }}" href="riwayat2">Riwayat</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{ Request::is('contacUs2') ? 'active' : '' }}" href="contacUs2">Contact Us</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{ Request::is('aboutUs2') ? 'active' : '' }}" href="aboutUs2">About Us</a>
+            </li>
+        {{-- <li class="nav-item"><a class="nav-link active" href="welcome2">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="service2">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="riwayat2">Riwayat</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacUs2">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutUs2">About Us</a></li> --}}
       </ul>
     </div>
 
+
     <!-- Kanan: Login/Register -->
     <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <x-dropdown align="right" width="48">
+                <x-dropdown align="right" width="2">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
