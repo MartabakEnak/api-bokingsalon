@@ -3,6 +3,10 @@
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 
 </head>
+
+<body>
+  <div class="container">
+    
 <h2 class="mb-4">Halo Admin</h2>
 
 <a href="{{ route('admin.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-danger mb-3">
@@ -60,3 +64,6 @@
     </tbody>
   </table>
 </div>
+
+  </div>
+</body>
