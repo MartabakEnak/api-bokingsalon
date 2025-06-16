@@ -31,7 +31,7 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -43,8 +43,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-       return redirect('/login')->with('status', 'Registration successful. Please login.');
-
-        // return redirect(route('login', absolute: false));
+        return redirect('/login')->with('status', 'Registration successful. Please login.');
     }
 }

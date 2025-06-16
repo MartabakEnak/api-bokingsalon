@@ -411,6 +411,16 @@ padding: 0;
         margin-bottom: 20px;
       }
     }
+    .img-member-booking {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+}
+
+
+
+
     /* space card to footer */
     .spacing-before-footer {
     margin-bottom: 100px; /* Sesuaikan nilai sesuai kebutuhan */
@@ -535,7 +545,7 @@ padding: 0;
     position: relative;
     width: 85%;               /* Biar ada space kiri kanan */
     max-width: 1297px;        /* Biar sesuai resolusi */
-    height: auto;
+    height: 600px;
     margin: 0 auto;
     border-radius: 12px;
     overflow: hidden;
@@ -781,3 +791,53 @@ tbody td:last-child {
   color: green;
   font-weight: 600;
 }
+
+/* admin */
+.sidebar {
+      height: 100vh;
+      background-color: #0050f5;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .sidebar .nav-link {
+      color: white;
+      font-weight: 500;
+    }
+
+    .sidebar .nav-link.active,
+    .sidebar .nav-link:hover {
+      background-color: white;
+      color: #0050f5;
+      border-radius: 0 30px 30px 0;
+    }
+
+    .order-card {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+    }
+
+    .table thead th {
+      color: #6c757d;
+      font-size: 14px;
+    }
+
+    .table tbody tr {
+      vertical-align: middle;
+    }
+
+    .badge-status {
+      font-size: 0.9rem;
+    }
+
+    .active-row {
+      background-color: #0050f5;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .active-row td {
+      color: white !important;
+    }

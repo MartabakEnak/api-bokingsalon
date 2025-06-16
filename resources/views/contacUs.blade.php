@@ -63,39 +63,60 @@
     <div class="row justify-content-center">
       <div class="col-lg-10 booking-box">
         <div class="row align-items-center">
-          <!-- Image -->
-          <div class="col-md-5 text-center booking-image">
-            <img src="{{ asset('assets/img/member.png') }}" class="img-fluid rounded" alt="Model Salon">
-          </div>
 
           <!-- Form -->
-          <div class="col-md-7">
-            <div class="label-title mb-1">BEAUTY SALON</div>
-            <div class="form-section-title mb-4">Book appointment</div>
+          <form method="POST" action="{{ route('pemesanan.store') }}">
+    @csrf
+  <div class="label-title mb-1">SALON ASIH</div>
+  <div class="form-section-title mb-4">Book Appointment</div>
 
-            <div class="row mb-3">
-              <div class="col-md-6 mb-3 mb-md-0">
-                <input type="date" class="form-control" placeholder="Date">
-              </div>
-              <div class="col-md-6">
-                <div class="input-group">
-                  <input type="time" class="form-control" placeholder="Time">
-                  <span class="input-group-text bg-white"><i class="bi bi-clock"></i></span>
-                </div>
-              </div>
-            </div>
+  <!-- Nomor WhatsApp -->
+  <div class="mb-3">
+    <input type="text" name="no_telepon" class="form-control" placeholder="Nomor WhatsApp" required>
+  </div>
 
-            <div class="mb-4">
-              <select class="form-select">
-                <option selected disabled>Service</option>
-                <option value="1">Haircut</option>
-                <option value="2">Facial</option>
-                <option value="3">Manicure</option>
-              </select>
-            </div>
+  <div class="row">
+    <!-- Kolom Pemesanan 1 -->
+    <div class="col-md-6">
+      <h6>Pemesanan 1</h6>
+      <div class="mb-2">
+        <input type="date" name="tanggal[0]" class="form-control" required>
+      </div>
+      <div class="mb-2">
+        <input type="time" name="jam[0]" class="form-control" required>
+      </div>
+      <div class="mb-2">
+        <select name="layanan_id[0]" class="form-select" required>
+          <option selected disabled>Service</option>
+          <option value="1">Haircut</option>
+          <option value="2">Facial</option>
+          <option value="3">Manicure</option>
+        </select>
+      </div>
+    </div>
 
-            <button class="btn btn-maroon">Pesan</button>
-          </div>
+    <!-- Kolom Pemesanan 2 -->
+    <div class="col-md-6">
+      <h6>Pemesanan 2</h6>
+      <div class="mb-2">
+        <input type="date" name="tanggal[1]" class="form-control">
+      </div>
+      <div class="mb-2">
+        <input type="time" name="jam[1]" class="form-control">
+      </div>
+      <div class="mb-2">
+        <select name="layanan_id[1]" class="form-select">
+          <option selected disabled>Service</option>
+          <option value="1">Haircut</option>
+          <option value="2">Facial</option>
+          <option value="3">Manicure</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-maroon mt-3" style="background-color: maroon; color: white;">Pesan</button>
+</form>
         </div>
       </div>
     </div>
