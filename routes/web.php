@@ -61,6 +61,20 @@ Route::get('/admin/dashboard', function () {
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 Route::post('/admin/konfirmasi/{id}', [AdminDashboardController::class, 'konfirmasi'])->name('admin.konfirmasi');
 
+
+Route::get('/riwayat', [PemesananController::class, 'riwayat'])->middleware('auth')->name('user.riwayat');
+
+Route::get('/riwayat', [PemesananController::class, 'riwayat'])->middleware('auth');
+Route::get('/riwayat/cetak/{id}', [PemesananController::class, 'cetak'])->name('riwayat.cetak');
+
+
+
+
+Route::get('/pembayaran/{id}', [PemesananController::class, 'tampilkanQR'])->name('pembayaran.qr');
+Route::get('/riwayat', [\App\Http\Controllers\PemesananController::class, 'riwayat'])
+    ->middleware('auth')
+    ->name('riwayat');
+
 // Route yang hanya bisa diakses setelah login admin
 // Route::middleware(['auth:admin'])->group(function () {
 //     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');

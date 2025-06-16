@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Pemesanan;
+use App\Models\User;
+
 
 class PemesananController extends Controller
 {
@@ -43,4 +45,33 @@ class PemesananController extends Controller
 
     return response()->json($pesanan);
 }
+
+
+public function riwayat()
+{
+    $user = Auth::user(); // ambil user yang sedang login
+    $pemesanan = Pemesanan::with('layanan')->where('user_id', $user->id)->get();
+
+    return view('riwayat', compact('pemesanan'));
+
+}
+public function cetak($id)
+{
+    $pemesanan = Pemesanan::with(['layanan', 'user'])->findOrFail($id);
+
+    return view('cetak', compact('pemesanan'));
+}
+public function tampilkanQR($id)
+{
+    $pesanan = Pemesanan::with('layanan')->findOrFail($id);
+
+    // Simulasi data QR
+    $qrData = 'https://example.com/bayar/' . $pesanan->id;
+
+    return view('qr', compact('pesanan', 'qrData'));
+}
+
+
+
+
 }

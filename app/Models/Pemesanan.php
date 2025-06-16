@@ -13,6 +13,7 @@ class Pemesanan extends Model
     protected $table = 'pemesanan';
 
     protected $fillable = [
+        'user_id',
         'nama_pelanggan',
         'no_telepon',
         'layanan_id',
@@ -22,7 +23,12 @@ class Pemesanan extends Model
     ];
 
     public function layanan()
-    {
-        return $this->belongsTo(Layanan::class);
-    }
+{
+    return $this->belongsTo(Layanan::class, 'layanan_id');
+}
+
+    public function user()
+{
+    return $this->belongsTo(User::class);
+}
 }
