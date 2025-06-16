@@ -21,12 +21,7 @@ Route::view('/aboutUs', 'aboutUs');
 Route::view('/riwayat', 'riwayat');
 Route::view('/service', 'service');
 
-// Halaman admin manual (tanpa login) untuk testingRoute::get('/contacUs2', function () {return view('contacUs2'); });
-Route::get('/aboutUs2', function () {return view('aboutUs2'); });
-Route::get('/welcome2', function () {return view('welcome2'); });
-Route::get('/riwayat2', function () {return view('riwayat2'); });
-Route::get('/service2', function () {return view('service2'); });
-
+// Halaman admin manual (tanpa login) untuk testing
 Route::get('/admin', [OrderController::class, 'index'])->name('admin');
 
 /*
