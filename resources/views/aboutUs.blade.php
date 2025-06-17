@@ -23,7 +23,7 @@
 
   <!-- Hero Title -->
   <div class="hero bg-white">
-    <h1>about us</h1>
+    <h1>About us</h1>
   </div>
 
 <div class="image-wrapper">

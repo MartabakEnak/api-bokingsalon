@@ -1,52 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Riwayat</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Salon Asih</title>
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <!-- Import dari Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Pemesanan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    @include('partials.navbar')
+<body class="bg-gray-100 font-sans">
 
-     <!-- Hero Title -->
-  <div class="hero bg-white">
-    <h1>riwayat</h1>
-  </div>
+    <!-- Navbar -->
+    <nav class="bg-pink-600 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">Salon Cantik</h1>
+            <ul class="flex space-x-4">
+                <li><a href="/" class="hover:underline">Beranda</a></li>
+                <li><a href="/layanan" class="hover:underline">Layanan</a></li>
+                <li><a href="/riwayat" class="underline font-semibold">Riwayat</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <div class="history-container">
-  <h2>Riwayat Pemesanan</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Kuitansi</th>
-        <th>Nama</th>
-        <th>Tanggal</th>
-        <th>Waktu</th>
-        <th>Layanan</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>kuitansi</strong></td>
-        <td>Alex Pastor</td>
-        <td><span class="tanggal">07 Juli 2025</span></td>
-        <td><span class="waktu"><i class="fa fa-clock-o"></i> 10.00 Wita</span></td>
-        <td><a href="#" class="layanan">Nail Art</a></td>
-        <td><span class="status diterima">Di Terima</span></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    <!-- Konten -->
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4 text-gray-800">Riwayat Pemesanan Anda</h2>
 
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white rounded-lg shadow">
+                <thead class="bg-pink-500 text-white">
+                    <tr>
+                        <th class="py-3 px-6 text-left">No</th>
+                        <th class="py-3 px-6 text-left">Nama Layanan</th>
+                        <th class="py-3 px-6 text-left">Tanggal</th>
+                        <th class="py-3 px-6 text-left">Jam</th>
+                        <th class="py-3 px-6 text-left">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700">
+    @php $no = 1; @endphp
 
-    @include('partials.footer')
+    @isset($pemesanan)
+        @forelse ($pemesanan as $item)
+            <tr class="border-b hover:bg-pink-50">
+                <td class="py-3 px-6">{{ $no++ }}</td>
+                <td class="py-3 px-6">{{ $item->layanan->nama }}</td>
+                <td class="py-3 px-6">{{ date('d M Y', strtotime($item->tanggal)) }}</td>
+                <td class="py-3 px-6">{{ $item->jam }}</td>
+                <td class="py-3 px-6">
+                    <span class="px-3 py-1 rounded-full text-sm font-medium
+                        {{ $item->status == 'selesai' ? 'bg-green-100 text-green-800' :
+                           ($item->status == 'batal' ? 'bg-red-100 text-red-800' :
+                           'bg-yellow-100 text-yellow-800') }}">
+                        {{ ucfirst($item->status) }}
+                    </span>
+                </td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="5" class="text-center py-5 text-gray-500">Belum ada pemesanan.</td>
+            </tr>
+        @endforelse
+    @else
+        <tr>
+            <td colspan="5" class="text-center py-5 text-gray-500">
+                Anda harus login terlebih dahulu untuk melihat riwayat pemesanan.
+            </td>
+        </tr>
+    @endisset
+</tbody>
+
+            </table>
+        </div>
+    </div>
+
 </body>
 </html>

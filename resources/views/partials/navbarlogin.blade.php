@@ -41,11 +41,6 @@
             <li class="nav-item">
             <a class="nav-link {{ Request::is('aboutUs2') ? 'active' : '' }}" href="aboutUs2">About Us</a>
             </li>
-        {{-- <li class="nav-item"><a class="nav-link active" href="welcome2">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="service2">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="riwayat2">Riwayat</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacUs2">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="aboutUs2">About Us</a></li> --}}
       </ul>
     </div>
 
@@ -55,7 +50,11 @@
                 <x-dropdown align="right" width="2">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
+                            @auth
+    <div>{{ Auth::user()->name }}</div>
+@else
+    <div>Guest</div> {{-- atau link login --}}
+@endauth
 
                             <div class="ms-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
