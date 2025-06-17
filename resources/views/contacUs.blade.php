@@ -57,71 +57,84 @@
     <p>Daftar atau login untuk menikmati promo eksklusif dari Salon Asih.</p>
   </div>
 
-  <!-- Booking Section -->
+<!-- Booking Section -->
 <div class="container booking-box-wrapper spacing-before-footer">
   <div class="container booking-box-wrapper">
     <div class="row justify-content-center">
       <div class="col-lg-10 booking-box">
         <div class="row align-items-center">
 
-          <!-- Form -->
+          <!-- Form hanya untuk user yang sudah login -->
+          @auth
           <form method="POST" action="{{ route('pemesanan.store') }}">
-    @csrf
-  <div class="label-title mb-1">SALON ASIH</div>
-  <div class="form-section-title mb-4">Book Appointment</div>
+            @csrf
+            <div class="label-title mb-1">SALON ASIH</div>
+            <div class="form-section-title mb-4">Book Appointment</div>
 
-  <!-- Nomor WhatsApp -->
-  <div class="mb-3">
-    <input type="text" name="no_telepon" class="form-control" placeholder="Nomor WhatsApp" required>
-  </div>
+            <!-- Nomor WhatsApp -->
+            <div class="mb-3">
+              <input type="text" name="no_telepon" class="form-control" placeholder="Nomor WhatsApp" required>
+            </div>
 
-  <div class="row">
-    <!-- Kolom Pemesanan 1 -->
-    <div class="col-md-6">
-      <h6>Pemesanan 1</h6>
-      <div class="mb-2">
-        <input type="date" name="tanggal[0]" class="form-control" required>
-      </div>
-      <div class="mb-2">
-        <input type="time" name="jam[0]" class="form-control" required>
-      </div>
-      <div class="mb-2">
-        <select name="layanan_id[0]" class="form-select" required>
-          <option selected disabled>Service</option>
-          <option value="1">Haircut</option>
-          <option value="2">Facial</option>
-          <option value="3">Manicure</option>
-        </select>
-      </div>
-    </div>
+            <div class="row">
+              <!-- Kolom Pemesanan 1 -->
+              <div class="col-md-6">
+                <h6>Pemesanan 1</h6>
+                <div class="mb-2">
+                  <input type="date" name="tanggal[0]" class="form-control" required>
+                </div>
+                <div class="mb-2">
+                  <input type="time" name="jam[0]" class="form-control" required>
+                </div>
+                <div class="mb-2">
+                  <select name="layanan_id[0]" class="form-select" required>
+                    <option selected disabled>Service</option>
+                    <option value="1">Haircut</option>
+                    <option value="2">Facial</option>
+                    <option value="3">Manicure</option>
+                  </select>
+                </div>
+              </div>
 
-    <!-- Kolom Pemesanan 2 -->
-    <div class="col-md-6">
-      <h6>Pemesanan 2</h6>
-      <div class="mb-2">
-        <input type="date" name="tanggal[1]" class="form-control">
-      </div>
-      <div class="mb-2">
-        <input type="time" name="jam[1]" class="form-control">
-      </div>
-      <div class="mb-2">
-        <select name="layanan_id[1]" class="form-select">
-          <option selected disabled>Service</option>
-          <option value="1">Haircut</option>
-          <option value="2">Facial</option>
-          <option value="3">Manicure</option>
-        </select>
-      </div>
-    </div>
-  </div>
+              <!-- Kolom Pemesanan 2 -->
+              <div class="col-md-6">
+                <h6>Pemesanan 2</h6>
+                <div class="mb-2">
+                  <input type="date" name="tanggal[1]" class="form-control">
+                </div>
+                <div class="mb-2">
+                  <input type="time" name="jam[1]" class="form-control">
+                </div>
+                <div class="mb-2">
+                  <select name="layanan_id[1]" class="form-select">
+                    <option selected disabled>Service</option>
+                    <option value="1">Haircut</option>
+                    <option value="2">Facial</option>
+                    <option value="3">Manicure</option>
+                  </select>
+                </div>
+              </div>
+            </div>
 
-  <button type="submit" class="btn btn-maroon mt-3" style="background-color: maroon; color: white;">Pesan</button>
-</form>
+            <button type="submit" class="btn btn-maroon mt-3" style="background-color: maroon; color: white;">Pesan</button>
+          </form>
+          @endauth
+
+          <!-- Jika belum login -->
+          @guest
+          <div class="text-center mt-3">
+            <p>Silakan <a href="{{ route('login') }}" class="btn btn-maroon" style="background-color: maroon; color: white;">
+              Login untuk memesan
+            </a></p>
+          </div>
+          @endguest
+
         </div>
       </div>
     </div>
   </div>
-  </div>
+</div>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

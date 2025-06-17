@@ -4,19 +4,24 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PemesananController;
-use App\Http\Controllers\Api\PemesananApiController;
 use App\Http\Controllers\AdminAuthController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\PembayaranController;
+use App\Models\Layanan;
 
+/*
+|--------------------------------------------------------------------------
+| Halaman Umum (tanpa login)
+|--------------------------------------------------------------------------
+*/
 
+Route::view('/', 'welcome');
+Route::view('/welcome', 'welcome');
+Route::view('/contacUs', 'contacUs');
+Route::view('/aboutUs', 'aboutUs');
+Route::view('/riwayat', 'riwayat');
+Route::view('/service', 'service');
 
-Route::get('/', function () {return view('welcome');});
-Route::get('/contacUs', function () {return view('contacUs'); });
-Route::get('/aboutUs', function () {return view('aboutUs'); });
-Route::get('/welcome', function () {return view('welcome'); });
-Route::get('/riwayat', function () {return view('riwayat'); });
-Route::get('/service', function () {return view('service'); });
 
 Route::get('/contacUs2', function () {return view('contacUs2'); });
 Route::get('/aboutUs2', function () {return view('aboutUs2'); });
@@ -24,50 +29,87 @@ Route::get('/welcome2', function () {return view('welcome2'); });
 Route::get('/riwayat2', function () {return view('riwayat2'); });
 Route::get('/service2', function () {return view('service2'); });
 
+Route::get('/welcome2', function () {
+    return view('welcome2');
+})->name('welcome2'); // ← WAJIB ADA INI
+
+
+// Halaman admin manual (tanpa login) untuk testing
 Route::get('/admin', [OrderController::class, 'index'])->name('admin');
 
+/*
+|--------------------------------------------------------------------------
+| Pemesanan oleh user (tanpa login)
+|--------------------------------------------------------------------------
+*/
+
 Route::post('/pemesanan', [PemesananController::class, 'store'])->name('pemesanan.store');
-Route::get('/pemesanan', [PemesananController::class, 'index']);
+Route::get('/pemesanan', [PemesananController::class, 'index'])->name('pemesanan.index');
 
-Route::get('/pemesanan', [PemesananApiController::class, 'index']);
+/*
+|--------------------------------------------------------------------------
+| API Endpoint untuk fetch dari JavaScript (Dashboard Admin)
+|--------------------------------------------------------------------------
+*/
 
+Route::get('/api/bookings', [PemesananController::class, 'index'])->name('api.bookings');
+Route::get('/api/bookings/{id}', [PemesananController::class, 'show'])->name('api.bookings.show');
+Route::put('/api/bookings/{id}', [PemesananController::class, 'update'])->name('api.bookings.update');
+Route::delete('/api/bookings/{id}', [PemesananController::class, 'destroy'])->name('api.bookings.destroy');
 
+// API untuk data layanan (digunakan di form booking/edit)
+Route::get('/api/layanan', function () {
+    return response()->json(Layanan::all());
+})->name('api.layanan');
 
+/*
+|--------------------------------------------------------------------------
+| Auth untuk user (login, register, dashboard)
+|--------------------------------------------------------------------------
+*/
 
-// Halaman utama / welcome (bisa diubah sesuai kebutuhan)
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// Dashboard — hanya untuk user yang sudah login
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::view('/dashboard', 'dashboard')->name('dashboard');
 
-    // Profil (contoh kalau kamu mau user bisa edit profil)
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Mengikutsertakan route auth (login, register, logout) dari Breeze
+// Auth default dari Laravel Breeze
 require __DIR__.'/auth.php';
 
+/*
+|--------------------------------------------------------------------------
+| Auth Admin & Halaman Admin Dashboard
+|--------------------------------------------------------------------------
+*/
 
-// Login dan Logout
 Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
 Route::post('/admin/login', [AdminAuthController::class, 'login']);
 Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-})->name('admin.dashboard');
+// Dashboard Admin dan aksi konfirmasi
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 Route::post('/admin/konfirmasi/{id}', [AdminDashboardController::class, 'konfirmasi'])->name('admin.konfirmasi');
+
+Route::get('/riwayat2', [PemesananController::class, 'riwayat2'])->middleware('auth');
+Route::get('/riwayat/cetak/{id}', [PemesananController::class, 'cetak'])->name('riwayat.cetak');
+
+
+
+
+Route::get('/pembayaran/{id}', [PemesananController::class, 'tampilkanQR'])->name('pembayaran.qr');
+Route::get('/riwayat', [\App\Http\Controllers\PemesananController::class, 'riwayat'])
+    ->middleware('auth')
+    ->name('riwayat');
+
 
 // Route yang hanya bisa diakses setelah login admin
 // Route::middleware(['auth:admin'])->group(function () {
 //     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 //     Route::post('/admin/pemesanan/konfirmasi/{id}', [AdminController::class, 'konfirmasi'])->name('admin.konfirmasi');
 // });
+
+//payment gateway
+Route::get('/bayar/{id}', [PembayaranController::class, 'bayar'])->name('bayar');
