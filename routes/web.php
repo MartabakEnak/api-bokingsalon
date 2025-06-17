@@ -6,6 +6,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\PembayaranController;
 use App\Models\Layanan;
 
 /*
@@ -20,6 +21,18 @@ Route::view('/contacUs', 'contacUs');
 Route::view('/aboutUs', 'aboutUs');
 Route::view('/riwayat', 'riwayat');
 Route::view('/service', 'service');
+
+
+Route::get('/contacUs2', function () {return view('contacUs2'); });
+Route::get('/aboutUs2', function () {return view('aboutUs2'); });
+Route::get('/welcome2', function () {return view('welcome2'); });
+Route::get('/riwayat2', function () {return view('riwayat2'); });
+Route::get('/service2', function () {return view('service2'); });
+
+Route::get('/welcome2', function () {
+    return view('welcome2');
+})->name('welcome2'); // ← WAJIB ADA INI
+
 
 // Halaman admin manual (tanpa login) untuk testing
 Route::get('/admin', [OrderController::class, 'index'])->name('admin');
@@ -79,12 +92,8 @@ Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admi
 // Dashboard Admin dan aksi konfirmasi
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 Route::post('/admin/konfirmasi/{id}', [AdminDashboardController::class, 'konfirmasi'])->name('admin.konfirmasi');
-<<<<<<< HEAD
 
-
-Route::get('/riwayat', [PemesananController::class, 'riwayat'])->middleware('auth')->name('user.riwayat');
-
-Route::get('/riwayat', [PemesananController::class, 'riwayat'])->middleware('auth');
+Route::get('/riwayat2', [PemesananController::class, 'riwayat2'])->middleware('auth');
 Route::get('/riwayat/cetak/{id}', [PemesananController::class, 'cetak'])->name('riwayat.cetak');
 
 
@@ -95,10 +104,12 @@ Route::get('/riwayat', [\App\Http\Controllers\PemesananController::class, 'riway
     ->middleware('auth')
     ->name('riwayat');
 
+
 // Route yang hanya bisa diakses setelah login admin
 // Route::middleware(['auth:admin'])->group(function () {
 //     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 //     Route::post('/admin/pemesanan/konfirmasi/{id}', [AdminController::class, 'konfirmasi'])->name('admin.konfirmasi');
 // });
-=======
->>>>>>> 1d3ce7a7e30c78f0ff25b72277b171db8c6c15ed
+
+//payment gateway
+Route::get('/bayar/{id}', [PembayaranController::class, 'bayar'])->name('bayar');

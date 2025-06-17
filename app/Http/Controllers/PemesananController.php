@@ -16,48 +16,54 @@ class PemesananController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'no_telepon' => 'required|string|max:20',
-            'tanggal.*' => 'nullable|date',
-            'jam.*' => 'nullable',
-            'layanan_id.*' => 'nullable|integer|exists:layanan,id',
-        ]);
+{
+    $request->validate([
+        'no_telepon' => 'required|string|max:20',
+        'tanggal.*' => 'nullable|date',
+        'jam.*' => 'nullable',
+        'layanan_id.*' => 'nullable|integer|exists:layanan,id',
+    ]);
 
-        $user = Auth::user();
-        $saved = [];
+    $user = Auth::user();
+    $saved = [];
+    $pemesananPertama = null;
 
-        for ($i = 0; $i < 2; $i++) {
-            if (!empty($request->tanggal[$i]) && !empty($request->jam[$i]) && !empty($request->layanan_id[$i])) {
-                $saved[] = Pemesanan::create([
-                    'user_id' => $user->id ?? null,
-                    'nama_pelanggan' => $user->name ?? 'Guest',
-                    'no_telepon' => $request->no_telepon,
-                    'layanan_id' => $request->layanan_id[$i],
-                    'tanggal' => $request->tanggal[$i],
-                    'jam' => $request->jam[$i],
-                    'status_pembayaran' => 'belum_bayar',
-                ]);
+    for ($i = 0; $i < 2; $i++) {
+        if (!empty($request->tanggal[$i]) && !empty($request->jam[$i]) && !empty($request->layanan_id[$i])) {
+            $pesanan = Pemesanan::create([
+                'user_id' => $user->id ?? null,
+                'nama_pelanggan' => $user->name ?? 'Guest',
+                'no_telepon' => $request->no_telepon,
+                'layanan_id' => $request->layanan_id[$i],
+                'tanggal' => $request->tanggal[$i],
+                'jam' => $request->jam[$i],
+                'status_pembayaran' => 'belum_bayar',
+            ]);
+
+            if ($pemesananPertama === null) {
+                $pemesananPertama = $pesanan;
             }
-        }
 
-        return response()->json([
-            'message' => 'Pemesanan berhasil disimpan!',
-            'data' => $saved
-        ], 201);
+            $saved[] = $pesanan;
+        }
     }
 
-<<<<<<< HEAD
-    return response()->json($pesanan);
+    // Jika tidak ada pesanan yang valid
+    if (!$pemesananPertama) {
+        return redirect()->back()->with('error', 'Pemesanan gagal disimpan.');
+    }
+
+    // Redirect ke halaman QR pembayaran
+    return redirect()->route('bayar', $pemesananPertama->id);
 }
 
 
-public function riwayat()
+public function riwayat2()
 {
     $user = Auth::user(); // ambil user yang sedang login
     $pemesanan = Pemesanan::with('layanan')->where('user_id', $user->id)->get();
 
-    return view('riwayat', compact('pemesanan'));
+    return view('riwayat2', compact('pemesanan'));
 
 }
 public function cetak($id)
@@ -76,10 +82,6 @@ public function tampilkanQR($id)
     return view('qr', compact('pesanan', 'qrData'));
 }
 
-
-
-
-=======
     public function show($id)
     {
         $pemesanan = Pemesanan::with('layanan')->findOrFail($id);
@@ -138,5 +140,4 @@ public function tampilkanQR($id)
 
         return response()->json($pesanan);
     }
->>>>>>> 1d3ce7a7e30c78f0ff25b72277b171db8c6c15ed
 }

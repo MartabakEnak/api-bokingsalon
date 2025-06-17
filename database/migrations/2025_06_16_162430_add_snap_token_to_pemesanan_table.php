@@ -8,14 +8,16 @@ return new class extends Migration {
     public function up()
     {
         Schema::table('pemesanan', function (Blueprint $table) {
-            $table->timestamps();
+            $table->string('snap_token')->nullable()->after('status_pembayaran');
+            $table->string('status_pembayaran')->default('belum_bayar')->change();
         });
     }
 
     public function down()
     {
         Schema::table('pemesanan', function (Blueprint $table) {
-         $table->dropTimestamps();
+            $table->dropColumn('snap_token');
+            // Jika ingin mengembalikan ke nullable atau nilai sebelumnya, bisa disesuaikan.
         });
     }
 };
