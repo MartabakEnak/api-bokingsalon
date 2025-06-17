@@ -16,7 +16,7 @@
             window.snap.pay('{{ $snapToken }}', {
                 onSuccess: function(result){
                     alert("Pembayaran sukses!");
-                    window.location.href = "/riwayat"; // redirect setelah sukses
+                    window.location.href = "/riwayat";
                 },
                 onPending: function(result){
                     alert("Menunggu pembayaran...");
