@@ -124,15 +124,7 @@
                                 <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
                             </div>
                         </div>
-                        {{-- <!-- Service 6: KOSONG (konten kiri, gambar kanan) -->
-                        <div class="row mb-5 align-items-center flex-row-reverse">
-                            <div class="col-md-5 text-center">
-                                <img src="{{ asset('assets/img/empty.jpg') }}" alt="Empty" class="rounded" style="width:340px; height:auto; object-fit:cover; opacity:0.3;">
-                            </div>
-                            <div class="col-md-7">
-                                <!-- Kosong -->
-                            </div>
-                        </div> --}}
+                        
                     </div>
                 </section>
 
