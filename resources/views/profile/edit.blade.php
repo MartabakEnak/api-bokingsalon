@@ -1,4 +1,3 @@
-<!-- resources/views/profile.blade.php -->
 
 <x-app-layout>
     <x-slot name="header">
@@ -33,3 +32,4 @@
         </div>
     </div>
 </x-app-layout>
+  @include('partials.footer')

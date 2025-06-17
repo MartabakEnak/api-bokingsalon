@@ -56,7 +56,14 @@ class PemesananController extends Controller
     // Redirect ke halaman QR pembayaran
     return redirect()->route('bayar', $pemesananPertama->id);
 }
+public function riwayat()
+{
+    $user = Auth::user(); // ambil user yang sedang login
+    $pemesanan = Pemesanan::with('layanan')->where('user_id', $user->id)->get();
 
+    return view('riwayat', compact('pemesanan'));
+
+}
 
 public function riwayat2()
 {

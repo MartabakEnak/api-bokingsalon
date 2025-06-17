@@ -45,8 +45,8 @@
 
     <!-- KANAN -->
     <div class="col-md-6">
-      <div class="hero-image-box w-100"></div>
-    </div>
+  <div class="hero-image-box w-100" style="background-image: url('{{ asset('assets/img/aboutous1.jpg') }}'); background-size: cover; background-position: top center; height: 400px; border-radius: 12px;">
+  </div>
   </div>
 </div>
 
@@ -104,7 +104,7 @@
 
 </div>
   </div>
-  
+
     @include('partials.footer')
 </body>
 </html>

@@ -100,9 +100,9 @@ Route::get('/riwayat/cetak/{id}', [PemesananController::class, 'cetak'])->name('
 
 
 Route::get('/pembayaran/{id}', [PemesananController::class, 'tampilkanQR'])->name('pembayaran.qr');
-Route::get('/riwayat', [\App\Http\Controllers\PemesananController::class, 'riwayat'])
-    ->middleware('auth')
-    ->name('riwayat');
+Route::get('/riwayat', [PemesananController::class, 'riwayat'])->middleware('auth');
+Route::get('/riwayat', [PemesananController::class, 'riwayat']);
+
 
 
 // Route yang hanya bisa diakses setelah login admin

@@ -33,8 +33,11 @@
             <a class="nav-link {{ Request::is('service') ? 'active' : '' }}" href="service">Services</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link {{ Request::is('riwayat') ? 'active' : '' }}" href="riwayat">Riwayat</a>
-            </li>
+            {{-- <li class="nav-item">
+    <a class="nav-link {{ Request::is('riwayat') ? 'active' : '' }}" href="{{ url('riwayat') }}">Riwayat</a>
+</li>
+
+            </li> --}}
             <li class="nav-item">
             <a class="nav-link {{ Request::is('contacUs') ? 'active' : '' }}" href="contacUs">Contact Us</a>
             </li>
