@@ -35,35 +35,34 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($pemesanan as $pesanan)
-                        <tr>
-                            <td>
-    <a href="{{ route('riwayat.cetak', $pesanan->id) }}" class="btn btn-sm btn-primary" target="_blank">
-        kuitansi
-    </a>
-</td>
-                            <td>{{ $pesanan->user->name ?? 'Tidak diketahui' }}</td>
-                            <td>{{ \Carbon\Carbon::parse($pesanan->tanggal)->format('d M Y') }}</td>
-                            <td>{{ $pesanan->jam ?? '-' }}</td>
-                            <td>{{ $pesanan->layanan->nama ?? '-' }}</td>
-                            <td>
-    <span class="badge bg-{{ strtolower($pesanan->status_pembayaran) === 'diterima' ? 'success' : 'secondary' }}">
-        {{ ucfirst($pesanan->status_pembayaran) }}
-    </span>
-
-    @if(strtolower($pesanan->status_pembayaran) === 'belum_bayar')
-        <a href="{{ route('pembayaran.qr', $pesanan->id) }}" class="btn btn-sm btn-warning mt-2">
-            <i class="bi bi-cash"></i> Bayar Sekarang
-        </a>
-    @endif
-</td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="6" class="text-center">Belum ada pemesanan.</td>
-                        </tr>
-                    @endforelse
-                </tbody>
+    @forelse($pemesanan as $pesanan)
+        <tr>
+            <td class="text-center">
+                <a href="{{ route('riwayat.cetak', $pesanan->id) }}" class="btn btn-sm btn-primary" target="_blank">
+                    kuitansi
+                </a>
+            </td>
+            <td class="text-center">{{ $pesanan->user->name ?? 'Tidak diketahui' }}</td>
+            <td class="text-center">{{ \Carbon\Carbon::parse($pesanan->tanggal)->format('d M Y') }}</td>
+            <td class="text-center">{{ $pesanan->jam ?? '-' }}</td>
+            <td class="text-center">{{ $pesanan->layanan->nama ?? '-' }}</td>
+            <td class="text-center">
+                <span class="badge bg-{{ strtolower($pesanan->status_pembayaran) === 'diterima' ? 'success' : 'secondary' }}">
+                    {{ ucfirst($pesanan->status_pembayaran) }}
+                </span>
+                @if(strtolower($pesanan->status_pembayaran) === 'belum_bayar')
+                    <a href="{{ route('pembayaran.qr', $pesanan->id) }}" class="btn btn-sm btn-warning mt-2">
+                        <i class="bi bi-cash"></i> Bayar Sekarang
+                    </a>
+                @endif
+            </td>
+        </tr>
+    @empty
+        <tr>
+            <td colspan="6" class="text-center">Belum ada pemesanan.</td>
+        </tr>
+    @endforelse
+</tbody>
             </table>
         </div>
     </div>

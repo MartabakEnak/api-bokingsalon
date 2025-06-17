@@ -156,7 +156,7 @@
                     </div>
 
                     <div class="text-center mt-4">
-                        <a class=" {{ Request::is('service') ? 'active' : '' }}" href="service">View all</a>
+                        <a class=" {{ Request::is('service2') ? 'active' : '' }}" href="service2">View all</a>
                     </div>
                 </div>
             </div>
