@@ -41,11 +41,6 @@
             <li class="nav-item">
             <a class="nav-link {{ Request::is('aboutUs2') ? 'active' : '' }}" href="aboutUs2">About Us</a>
             </li>
-        {{-- <li class="nav-item"><a class="nav-link active" href="welcome2">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="service2">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="riwayat2">Riwayat</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacUs2">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="aboutUs2">About Us</a></li> --}}
       </ul>
     </div>
 
