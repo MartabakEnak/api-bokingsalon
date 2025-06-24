@@ -26,6 +26,9 @@
         border: 1px solid #dee2e6;
     }
 
+    .container {
+        background-color: #bd2130;
+    }
     .badge {
         padding: 5px 10px;
         border-radius: 12px;

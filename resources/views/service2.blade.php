@@ -17,7 +17,7 @@
 
       <!-- Hero Title -->
   <div class="hero bg-white">
-    <h1>service</h1>
+    <h1>Service</h1>
   </div>
 
     <!-- Hero Image (Full Width) -->
@@ -45,6 +45,7 @@
                             <div class="col-md-7">
                                 <h4 class="mb-3 fw-bold" style="color:#7B0000;">SULAM</h4>
                                 <ul class="list-unstyled">
+<<<<<<< HEAD
                                     <li>Daily make up <span class="float-end text-muted">from 100.000</span></li>
                                     <li>Night make up <span class="float-end text-muted">from 100.000</span></li>
                                     <li>Bridal make up <span class="float-end text-muted">from 100.000</span></li>
@@ -54,6 +55,17 @@
                                 <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Booking</a>
                                 <a  class="fw-bold" style="color:#7B0000;">/</a>
                                 <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
+=======
+                                    <li>Daily make up <span class="float-end text-muted">from Rp. 100.000</span></li>
+                                    <li>Night make up <span class="float-end text-muted">from Rp. 100.000</span></li>
+                                    <li>Bridal make up <span class="float-end text-muted">from Rp. 100.000</span></li>
+                                    <li>Ocassion make up <span class="float-end text-muted">from Rp. 100.000</span></li>
+                                    <li>Television make up <span class="float-end text-muted">from Rp. 100.000</span></li>
+                                </ul>
+                                <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Booking</a>
+                                <a class="fw-bold" style="color:#7B0000;">/</a>
+                                <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Konsultasi</a>
+>>>>>>> 75c73df350ea2df9edf3cc81abf743d10bfabe6b
                             </div>
                         </div>
                         <!-- Service 2: HAIR STYLING (konten kiri, gambar kanan) -->
@@ -71,7 +83,8 @@
                                     <li>Hair mask <span class="float-end text-muted">from Rp. 100.000</span></li>
                                 </ul>
                                 <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Booking</a>
-                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
+                                <a class="fw-bold" style="color:#7B0000;">/</a>
+                                <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Konsultasi</a>
                             </div>
                         </div>
                         <!-- Service 3: NAIL CARE (gambar kiri, konten kanan) -->
@@ -89,7 +102,8 @@
                                     <li>Nail Spa <span class="float-end text-muted">from Rp. 110.000</span></li>
                                 </ul>
                                 <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Booking</a>
-                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
+                                <a class="fw-bold" style="color:#7B0000;">/</a>
+                                <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Konsultasi</a>
                             </div>
                         </div>
                         <!-- Service 4: RIAS (konten kiri, gambar kanan) -->
@@ -107,7 +121,8 @@
                                     <li>Rias Keluarga <span class="float-end text-muted">from Rp. 150.000</span></li>
                                 </ul>
                                 <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Booking</a>
-                                <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
+                                <a class="fw-bold" style="color:#7B0000;">/</a>
+                                <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Konsultasi</a>
                             </div>
                         </div>
                         <!-- Service 5: MASSAGE (gambar kiri, konten kanan) -->
@@ -125,7 +140,8 @@
                                     <li>Totok Wajah <span class="float-end text-muted">from Rp. 70.000</span></li>
                                 </ul>
                                 <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Booking</a>
-                                <a href="contacUs2" class="fw-bold" style="color:#7B0000;">konsultasi</a>
+                                <a class="fw-bold" style="color:#7B0000;">/</a>
+                                <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Konsultasi</a>
                             </div>
                         </div>
                     </div>
