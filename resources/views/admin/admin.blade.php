@@ -25,6 +25,7 @@
       <thead class="table-dark">
         <tr>
           <th>No</th>
+          <th>No. Antrean</th>
           <th>Nama</th>
           <th>No. Telepon</th>
           <th>Tanggal</th>
@@ -105,10 +106,18 @@
                 ? '<span class="badge bg-success">Diterima</span>'
                 : '<span class="badge bg-warning text-dark">Menunggu</span>';
 
-              tbody.innerHTML += `
+              tbody.innerHTML +=
                 <tr>
                   <td>${index + 1}</td>
-
+                  <td>
+  ${
+    row.status_pembayaran !== 'diterima'
+      ? '<span class="text-muted">Belum menyelesaikan pembayaran</span>'
+      : row.status_pengerjaan === 'selesai'
+        ? '<span class="badge bg-success">Selesai</span>'
+        : <span class="fw-bold">${row.no_antrean ?? '-'}</span>
+  }
+</td>
 
                   <td>${row.nama_pelanggan}</td>
                   <td>${row.no_telepon}</td>
@@ -120,12 +129,12 @@
                   <td>
                     <button class="btn btn-warning btn-sm mb-1" onclick="showEdit(${row.id}, '${row.nama_pelanggan}', '${row.no_telepon}', '${row.tanggal}', '${row.jam}', '${layanan_id}')">Edit</button>
                     <button class="btn btn-danger btn-sm" onclick="deleteBooking(${row.id})">Hapus</button>
-                     ${row.status_pembayaran !== 'diterima' ? `<button class="btn btn-success btn-sm" onclick="confirmPayment(${row.id})">Konfirmasi</button>` : ''}
+                     ${row.status_pembayaran !== 'diterima' ? <button class="btn btn-success btn-sm" onclick="confirmPayment(${row.id})">Konfirmasi</button> : ''}
                       ${(row.status_pembayaran === 'diterima' && row.status_pengerjaan !== 'selesai') ?
-    `<button class="btn btn-primary btn-sm" onclick="markAsDone(${row.id})">Selesai</button>`
+    <button class="btn btn-primary btn-sm" onclick="markAsDone(${row.id})">Selesai</button>
     : ''}
                   </td>
-                </tr>`;
+                </tr>;
             });
           })
           .catch(err => {
@@ -141,7 +150,7 @@
             const select = document.getElementById('editLayanan');
             select.innerHTML = '<option value="">-- Pilih Layanan --</option>';
             data.forEach(l => {
-              select.innerHTML += `<option value="${l.id}">${l.nama}</option>`;
+              select.innerHTML += <option value="${l.id}">${l.nama}</option>;
             });
           });
       }
@@ -159,7 +168,7 @@
       document.getElementById('editForm').addEventListener('submit', function (e) {
         e.preventDefault();
         const id = document.getElementById('editId').value;
-        fetch(`/api/bookings/${id}`, {
+        fetch(/api/bookings/${id}, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -188,7 +197,7 @@
 
       window.deleteBooking = function (id) {
         if (confirm('Yakin ingin menghapus pemesanan ini?')) {
-          fetch(`/api/bookings/${id}`, {
+          fetch(/api/bookings/${id}, {
             method: 'DELETE',
             headers: {
               'Accept': 'application/json',
@@ -208,7 +217,7 @@
       }
       window.confirmPayment = function (id) {
   if (confirm('Konfirmasi pembayaran untuk pemesanan ini?')) {
-    fetch(`/api/konfirmasi/${id}`, {
+    fetch(/api/konfirmasi/${id}, {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json',
@@ -234,7 +243,7 @@
     function markAsDone(id) {
     if (!confirm("Apakah kamu yakin ingin menyelesaikan pesanan ini?")) return;
 
-    fetch(`/selesai/${id}`, {
+    fetch(/selesai/${id}, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -245,7 +254,7 @@
     .then(data => {
         if (data.message) {
             alert(data.message);
-            location.reload(); // reload agar tampilan status berubah
+            location.reload();
         } else {
             alert("Gagal menyelesaikan (no message)");
         }
@@ -255,8 +264,6 @@
         alert("Error: Gagal menyelesaikan");
     });
 }
-
-
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

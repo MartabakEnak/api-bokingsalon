@@ -8,7 +8,7 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\PembayaranController;
 use App\Models\Layanan;
-
+use App\Http\Controllers\WhatsappController;
 /*
 |--------------------------------------------------------------------------
 | Halaman Umum (tanpa login)
@@ -113,3 +113,10 @@ Route::get('/riwayat', [PemesananController::class, 'riwayat']);
 
 //payment gateway
 Route::get('/bayar/{id}', [PembayaranController::class, 'bayar'])->name('bayar');
+
+
+// web.php
+Route::put('/api/konfirmasi/{id}', [PemesananController::class, 'confirm']);
+
+Route::put('/selesai/{id}', [PemesananController::class, 'selesaikan']);
+

@@ -45,13 +45,14 @@
                             <div class="col-md-7">
                                 <h4 class="mb-3 fw-bold" style="color:#7B0000;">SULAM</h4>
                                 <ul class="list-unstyled">
-                                    <li>Daily make up <span class="float-end text-muted">from $35</span></li>
-                                    <li>Night make up <span class="float-end text-muted">from $35</span></li>
-                                    <li>Bridal make up <span class="float-end text-muted">from $35</span></li>
-                                    <li>Ocassion make up <span class="float-end text-muted">from $35</span></li>
-                                    <li>Television make up <span class="float-end text-muted">from $35</span></li>
+                                    <li>Daily make up <span class="float-end text-muted">from 100.000</span></li>
+                                    <li>Night make up <span class="float-end text-muted">from 100.000</span></li>
+                                    <li>Bridal make up <span class="float-end text-muted">from 100.000</span></li>
+                                    <li>Ocassion make up <span class="float-end text-muted">from 100.000</span></li>
+                                    <li>Television make up <span class="float-end text-muted">from 100.000</span></li>
                                 </ul>
                                 <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Booking</a>
+                                <a  class="fw-bold" style="color:#7B0000;">/</a>
                                 <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
                             </div>
                         </div>

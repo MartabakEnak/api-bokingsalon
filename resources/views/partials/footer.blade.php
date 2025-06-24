@@ -27,7 +27,7 @@
       <!-- Kolom 2: Hubungi Kami -->
       <div class="col-md-4 mb-4 mb-md-0 text-md-start text-center">
         <h5 class="footer-heading">Hubungi Kami</h5>
-        <p><a href="mailto:abcde@gmail.com" class="text-decoration-none text-light">abcde@gmail.com</a></p>
+        <p><a href="mailto:abcde@gmail.com" class="text-decoration-none text-light">Salonasih1991@gmail.com</a></p>
         <p class="text-secondary">+62 8123456789</p>
       </div>
 

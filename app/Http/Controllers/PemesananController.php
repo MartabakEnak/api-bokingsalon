@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Pemesanan;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 
 
 class PemesananController extends Controller
@@ -29,33 +30,38 @@ class PemesananController extends Controller
     $pemesananPertama = null;
 
     for ($i = 0; $i < 2; $i++) {
-        if (!empty($request->tanggal[$i]) && !empty($request->jam[$i]) && !empty($request->layanan_id[$i])) {
-            $pesanan = Pemesanan::create([
-                'user_id' => $user->id ?? null,
-                'nama_pelanggan' => $user->name ?? 'Guest',
-                'no_telepon' => $request->no_telepon,
-                'layanan_id' => $request->layanan_id[$i],
-                'tanggal' => $request->tanggal[$i],
-                'jam' => $request->jam[$i],
-                'status_pembayaran' => 'belum_bayar',
-            ]);
+    if (!empty($request->tanggal[$i]) && !empty($request->jam[$i]) && !empty($request->layanan_id[$i])) {
 
-            if ($pemesananPertama === null) {
-                $pemesananPertama = $pesanan;
-            }
+        $jumlahAntrean = Pemesanan::where('tanggal', $request->tanggal[$i])
+            ->where('jam', '<=', $request->jam[$i])
+            ->count();
 
-            $saved[] = $pesanan;
+        $pesanan = Pemesanan::create([
+            'user_id' => $user->id ?? null,
+            'nama_pelanggan' => $user->name ?? 'Guest',
+            'no_telepon' => $request->no_telepon,
+            'layanan_id' => $request->layanan_id[$i],
+            'tanggal' => $request->tanggal[$i],
+            'jam' => $request->jam[$i],
+            'status_pembayaran' => 'belum_bayar',
+            'no_antrean' => $jumlahAntrean + 1, // ← ini wajib
+        ]);
+
+        if ($pemesananPertama === null) {
+            $pemesananPertama = $pesanan;
         }
-    }
 
-    // Jika tidak ada pesanan yang valid
+        $saved[] = $pesanan;
+    }
+}
+
     if (!$pemesananPertama) {
         return redirect()->back()->with('error', 'Pemesanan gagal disimpan.');
     }
 
-    // Redirect ke halaman QR pembayaran
     return redirect()->route('bayar', $pemesananPertama->id);
 }
+
 public function riwayat()
 {
     $user = Auth::user(); // ambil user yang sedang login
@@ -132,13 +138,26 @@ public function tampilkanQR($id)
     }
 
     public function confirm($id)
-    {
-        $pemesanan = Pemesanan::findOrFail($id);
+{
+    $pemesanan = Pemesanan::findOrFail($id);
+
+    // Cek apakah status belum diterima
+    if ($pemesanan->status_pembayaran !== 'diterima') {
+        // Hitung antrean terakhir pada hari dan tanggal yang sama
+        $nomorTerakhir = Pemesanan::where('tanggal', $pemesanan->tanggal)
+                            ->whereNotNull('no_antrean')
+                            ->max('no_antrean');
+
+        // Buat antrean baru: +1 dari antrean terakhir, atau 1 jika belum ada
+        $pemesanan->no_antrean = $nomorTerakhir ? $nomorTerakhir + 1 : 1;
         $pemesanan->status_pembayaran = 'diterima';
         $pemesanan->save();
-
-        return response()->json(['message' => 'Pemesanan dikonfirmasi.']);
     }
+
+    return response()->json(['message' => 'Status pembayaran dikonfirmasi dan nomor antrean dibuat.']);
+}
+
+
 
     public function userBookings()
     {
@@ -147,4 +166,55 @@ public function tampilkanQR($id)
 
         return response()->json($pesanan);
     }
+//     public function antreanSekarang(Request $request)
+// {
+//     $tanggalHariIni = now()->format('Y-m-d');
+
+//     // Ambil antrean terakhir yang sudah diterima hari ini
+//     $last = Pemesanan::where('tanggal', $tanggalHariIni)
+//                 ->where('status_pembayaran', 'diterima')
+//                 ->orderBy('no_antrean', 'desc')
+//                 ->first();
+
+//     $antreanSekarang = $last ? $last->no_antrean : 0;
+
+//     return response()->json([
+//         'antrean_sekarang' => $antreanSekarang
+//     ]);
+// }
+public function selesaikan($id)
+{
+    try {
+        $pesanan = Pemesanan::findOrFail($id);
+
+        // Pastikan pembayaran sudah diterima
+        if (strtolower($pesanan->status_pembayaran) !== 'diterima') {
+            return response()->json([
+                'message' => 'Pesanan belum dibayar atau belum dikonfirmasi.'
+            ], 400);
+        }
+
+        // Perbarui status pengerjaan
+        $pesanan->status_pengerjaan = 'selesai';
+        $pesanan->save();
+
+        return response()->json([
+            'message' => 'Pesanan berhasil diselesaikan.'
+        ]);
+    } catch (\Exception $e) {
+        Log::error('Gagal menyelesaikan pesanan', [
+            'error' => $e->getMessage(),
+            'trace' => $e->getTraceAsString()
+        ]);
+
+        return response()->json([
+            'message' => 'Terjadi kesalahan saat menyelesaikan pesanan.',
+            'error' => $e->getMessage()
+        ], 500);
+    }
+}
+
+
+
+
 }

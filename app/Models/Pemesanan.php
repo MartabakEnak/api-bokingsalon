@@ -21,6 +21,9 @@ class Pemesanan extends Model
     'jam',
     'status_pembayaran',
     'snap_token',
+    'no_antrean',
+    'status_pengerjaan',
+
 ];
 
     public function layanan()
