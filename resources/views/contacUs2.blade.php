@@ -43,7 +43,7 @@
       </a>
     </div>
     <div class="col-md-3 d-flex align-items-stretch">
-      <a class="text-amber-900 text-decoration-none" href="mailto:senjaghautama2004@gmail.com.com?subject=Subjek%20Pesan&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda." style="display: block;">
+      <a class="text-amber-900 text-decoration-none" href="mailto:salonasih1991@gmail.com.com.com?subject=Subjek%20Pesan&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda." style="display: block;">
       <div class="info-box w-100 h-100">
         <i class="bi bi-envelope-fill"></i>
         <p class="mb-0"><a class="text-amber-900 text-decoration-none" href="mailto:senjaghautama2004@gmail.com.com?subject=Subjek%20Pesan&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda.">SalonAsih@gmail.com</a></p>
@@ -51,14 +51,14 @@
       </a>
     </div>
     <div class="col-md-3 d-flex align-items-stretch">
-      <a href="https://www.google.com/maps/search/?api=1&query=Jln. Pulau Bungin No.113 Denpasar Selatan" target="_blank" class="text-decoration-none" style="display: block;">
+      <a href="https://wa.me/6285739589921?text=Halo%20apakah%20masih%20ada%20booking%20list%20pada%20jam%2014%3A00" target="_blank" class="text-decoration-none" style="display: block;">
         <div class="info-box w-100 h-100">
           <i class="bi bi-whatsapp"></i>
           <p>
             <a class="text-amber-900 text-decoration-none" class="mb-0">Klik Disni</a>
           </p>
         </div>
-      </a>
+      </https:>
     </div>
   </div>
 </div>
