@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us</title>
+    <title>Salon Asih</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/logo_login.png') }}">
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Salon Asih</title>

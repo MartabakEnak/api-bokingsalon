@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Salon Asih</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/logo_login.png') }}">
          @vite(['resources/css/app.css', 'resources/js/app.js']) {{-- Kalau pakai Vite --}}
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Import dari Google Fonts -->

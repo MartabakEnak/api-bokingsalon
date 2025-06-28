@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Service</title>
+    <title>Salon Asih</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/logo_login.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Salon Asih</title>
          @vite(['resources/css/app.css', 'resources/js/app.js']) {{-- Kalau pakai Vite --}}
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Import dari Google Fonts -->
@@ -45,7 +47,6 @@
                             <div class="col-md-7">
                                 <h4 class="mb-3 fw-bold" style="color:#7B0000;">SULAM</h4>
                                 <ul class="list-unstyled">
-<<<<<<< HEAD
                                     <li>Daily make up <span class="float-end text-muted">from 100.000</span></li>
                                     <li>Night make up <span class="float-end text-muted">from 100.000</span></li>
                                     <li>Bridal make up <span class="float-end text-muted">from 100.000</span></li>
@@ -55,17 +56,6 @@
                                 <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Booking</a>
                                 <a  class="fw-bold" style="color:#7B0000;">/</a>
                                 <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
-=======
-                                    <li>Daily make up <span class="float-end text-muted">from Rp. 100.000</span></li>
-                                    <li>Night make up <span class="float-end text-muted">from Rp. 100.000</span></li>
-                                    <li>Bridal make up <span class="float-end text-muted">from Rp. 100.000</span></li>
-                                    <li>Ocassion make up <span class="float-end text-muted">from Rp. 100.000</span></li>
-                                    <li>Television make up <span class="float-end text-muted">from Rp. 100.000</span></li>
-                                </ul>
-                                <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Booking</a>
-                                <a class="fw-bold" style="color:#7B0000;">/</a>
-                                <a href="contacUs2" class="fw-bold" style="color:#7B0000;">Konsultasi</a>
->>>>>>> 75c73df350ea2df9edf3cc81abf743d10bfabe6b
                             </div>
                         </div>
                         <!-- Service 2: HAIR STYLING (konten kiri, gambar kanan) -->
