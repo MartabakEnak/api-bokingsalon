@@ -43,7 +43,7 @@
       </a>
     </div>
     <div class="col-md-3 d-flex align-items-stretch">
-      <a class="text-amber-900 text-decoration-none" href="mailto:salonasih1991@gmail.com.com.com?subject=Subjek%20Pesan&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda." style="display: block;">
+      <a class="text-amber-900 text-decoration-none" href="mailto:salonasih1991@gmail.com?subject=Subjek%20Pesan&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda." style="display: block;">
       <div class="info-box w-100 h-100">
         <i class="bi bi-envelope-fill"></i>
         <p class="mb-0"><a class="text-amber-900 text-decoration-none" href="mailto:senjaghautama2004@gmail.com.com?subject=Subjek%20Pesan&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda.">SalonAsih@gmail.com</a></p>
