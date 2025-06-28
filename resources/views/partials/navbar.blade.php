@@ -16,7 +16,15 @@
   <div class="container">
 
     <!-- Kiri: Brand -->
-    <a class="navbar-brand" href="#"><i class="bi bi-instagram"></i> <i class="bi bi-whatsapp"></i></a>
+    {{-- <a class="navbar-brand" href="#"><i class="bi bi-instagram"></i> <i class="bi bi-whatsapp"></i></a> --}}
+    <span class="d-flex gap-2">
+        <a href="https://www.instagram.com/" target="_blank">
+            <i class="bi bi-instagram text-white"></i>
+        </a>
+        <a href="https://wa.me/6285739589921?text=Terimakasih%20sudah%20menghubungi%20kami!%0ASilahkan%20bertanya%20mengenai%20reservasi%20booking%20atau%20berkonsultasi%20dengan%20admin%20kami!" class="text-reset text-decoration-none" target="_blank">
+            <i class="bi bi-whatsapp text-white"></i>
+        </a>
+    </span>
 
     <!-- Toggle button (untuk tampilan mobile) -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">

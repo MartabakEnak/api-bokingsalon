@@ -27,15 +27,23 @@
       <!-- Kolom 2: Hubungi Kami -->
       <div class="col-md-4 mb-4 mb-md-0 text-md-start text-center">
         <h5 class="footer-heading">Hubungi Kami</h5>
-        <p><a href="mailto:abcde@gmail.com" class="text-decoration-none text-light">Salonasih1991@gmail.com</a></p>
-        <p class="text-secondary">+62 8123456789</p>
+        <p><a href="mailto:salonasih1991@gmail.com?subject=&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda." class="text-decoration-none text-light">Salonasih1991@gmail.com</a></p>
+        <p class="text-secondary "><a class="text-decoration-none text-white" href="https://wa.me/6285739589921?text=Terimakasih%20sudah%20menghubungi%20kami!%0ASilahkan%20bertanya%20mengenai%20reservasi%20booking%20atau%20berkonsultasi%20dengan%20admin%20kami!">+62 8123456789</a></p>
       </div>
 
      <div class="col-md-4 text-md-start text-center position-relative">
   <h5 class="fw-bold">Media Sosial</h5>
-  <a href="#" class="me-2"><i class="fab fa-instagram text-white"></i></a>
-  <a href="#" class="me-2"><i class="fab fa-whatsapp text-white"></i></a>
-  <a href="#"><i class="fab fa-facebook text-white"></i></a>
+  <span class="d-flex gap-2">
+        <a href="https://www.instagram.com/" target="_blank">
+            <i class="bi bi-instagram text-white"></i>
+        </a>
+        <a href="https://wa.me/6285739589921?text=Terimakasih%20sudah%20menghubungi%20kami!%0ASilahkan%20bertanya%20mengenai%20reservasi%20booking%20atau%20berkonsultasi%20dengan%20admin%20kami!" class="text-reset text-decoration-none" target="_blank">
+            <i class="bi bi-whatsapp text-white"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-facebook text-white"></i>
+        </a>
+    </span>
 </div>
     </div>
   </div>

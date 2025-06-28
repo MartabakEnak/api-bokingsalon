@@ -72,7 +72,7 @@
     <div class="service-content-right">
       <p style="font-weight: 650;"> Salon Asih juga melayani rias pengantin profesional </p>
       <p>untuk hari pernikahan Anda, serta menyediakan layanan peminjaman baju kebaya dan pakaian wisuda atau graduation. Dengan pilihan lengkap dan pelayanan ramah, kami siap membantu Anda tampil maksimal di setiap momen spesial.</p>
-      <button class="service-button">Konsultasi</button>
+      <button class="service-button" onclick="kirimPesanWhatsApp()">Konsultasi</button>
     </div>
     <img src="{{ asset('assets/img/img2.png') }}" alt="Adat" class="image-inside-card-right">
   </div>
@@ -92,13 +92,19 @@
         <p>
           kosmetik berkualitas untuk menunjang penampilan Anda. Semua produk tersedia langsung di tempat — praktis dan terpercaya!
         </p>
-        <button class="service-button">Konsultasi</button>
+        <button class="service-button" onclick="kirimPesanWhatsApp()">Konsultasi</button>
       </div>
     </div>
   </div>
 
 </div>
   </div>
+  <script>
+  function kirimPesanWhatsApp() {
+    const url = "https://wa.me/6285739589921?text=Terimakasih%20sudah%20menghubungi%20kami!%0ASilahkan%20bertanya%20mengenai%20reservasi%20booking%20atau%20berkonsultasi%20dengan%20admin%20kami!";
+    window.open(url, "_blank"); // Buka di tab baru
+  }
+</script>
 </body>
 @include('partials.footer')
 </html>

@@ -43,7 +43,7 @@
       </a>
     </div>
     <div class="col-md-3 d-flex align-items-stretch">
-      <a class="text-amber-900 text-decoration-none" href="mailto:salonasih1991@gmail.com?subject=Subjek%20Pesan&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda." style="display: block;">
+      <a class="text-amber-900 text-decoration-none" href="mailto:salonasih1991@gmail.com?subject=&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda." style="display: block;">
       <div class="info-box w-100 h-100">
         <i class="bi bi-envelope-fill"></i>
         <p class="mb-0"><a class="text-amber-900 text-decoration-none" href="mailto:senjaghautama2004@gmail.com.com?subject=Subjek%20Pesan&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda.">SalonAsih@gmail.com</a></p>
@@ -51,7 +51,7 @@
       </a>
     </div>
     <div class="col-md-3 d-flex align-items-stretch">
-      <a href="https://wa.me/6285739589921?text=Halo%20apakah%20masih%20ada%20booking%20list%20pada%20jam%2014%3A00" target="_blank" class="text-decoration-none" style="display: block;">
+      <a href="https://wa.me/6285739589921?text=Terimakasih%20sudah%20menghubungi%20kami!%0ASilahkan%20bertanya%20mengenai%20reservasi%20booking%20atau%20berkonsultasi%20dengan%20admin%20kami!" target="_blank" class="text-decoration-none" style="display: block;">
         <div class="info-box w-100 h-100">
           <i class="bi bi-whatsapp"></i>
           <p>
