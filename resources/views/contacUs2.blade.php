@@ -33,20 +33,23 @@
     <div class="col-md-3 d-flex align-items-stretch">
       <div class="info-box w-100 h-100">
         <i class="bi bi-geo-alt-fill"></i>
-        <p class="mb-0">Jln. Pulau Bungin No.113</p>
-        <p class="mb-0">Denpasar Selatan</p>
+        <p class="mb-0"><a class="text-amber-900 text-decoration-none" href="https://www.google.com/maps/search/?api=1&query=Jln. Pulau Bungin No.113 Denpasar Selatan" target="_blank">Jln. Pulau Bungin No.113</a></p>
+        <p class="mb-0"><a class="text-amber-900 text-decoration-none" href="https://www.google.com/maps/search/?api=1&query=Jln. Pulau Bungin No.113 Denpasar Selatan" target="_blank">Denpasar Selatan</a></p>
+
       </div>
     </div>
     <div class="col-md-3 d-flex align-items-stretch">
       <div class="info-box w-100 h-100">
         <i class="bi bi-envelope-fill"></i>
-        <p class="mb-0"><u>SalonAsih@gmail.com</u></p>
+        <p class="mb-0"><a class="text-amber-900 text-decoration-none" href="mailto:senjaghautama2004@gmail.com.com?subject=Subjek%20Pesan&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda.">SalonAsih@gmail.com</a></p>
       </div>
     </div>
     <div class="col-md-3 d-flex align-items-stretch">
       <div class="info-box w-100 h-100">
         <i class="bi bi-whatsapp"></i>
-        <p class="mb-0">0123456789</p>
+        <p>
+          <a class="text-amber-900 text-decoration-none" href="https://wa.me/6285739589921?text=Saya%20tertarik%20dengan%20produk%20Anda" target="_blank" class="mb-0">Klik Disni</a>
+        </p>
       </div>
     </div>
   </div>
