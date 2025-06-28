@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Salon Asih</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/logo_login.png') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Import dari Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
@@ -166,7 +169,7 @@
     <div class="testimonial-section">
         <div class="container">
             <h1 class="text-center testimonial-header">Testimonials</h1>
-            <p class="text-center mb-5 testimonial-header">Definimal your main home juice to improve your organic water appetite and freight automation.</p>
+            <p class="text-center mb-5 testimonial-header">Simak pengalaman pelanggan kami yang telah merasakan layanan terbaik dari Salon Asih. Kepuasan Anda adalah prioritas kami!</p>
 
             <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -236,7 +239,7 @@
     <section class="history-section text-center">
         <div class="container">
             <h2 class="history-title mb-3">History</h2>
-            <p class="text-muted">Eleifend arcu non lorem justo in tempus purus gravida tortor egestas sed feugiat elementum</p>
+            <p class="text-muted">Perjalanan panjang Salon Asih dimulai dari komitmen untuk menghadirkan layanan kecantikan yang profesional dan berkualitas.</p>
 
             <div class="row align-items-center mt-5 text-start">
             <div class="col-md-6">

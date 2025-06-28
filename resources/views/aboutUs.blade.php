@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Us</title>
+    <title>Salon Asih</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/logo_login.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Salon Asih</title>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -13,14 +16,6 @@
 </head>
 <body>
     @include('partials.navbar')
-    {{-- @if (Auth::check()) --}}
-        {{-- Header untuk pengguna yang sudah login --}}
-        {{-- @include('partials.navbarlogin') --}}
-    {{-- @else --}}
-        {{-- Header untuk pengguna yang belum login --}}
-        {{-- @include('partials.navbar') --}}
-    {{-- @endif --}}
-
   <!-- Hero Title -->
   <div class="hero bg-white">
     <h1>About us</h1>
@@ -53,20 +48,19 @@
 <div class="container section-services">
   <h2 class="section-title">Beyond Ordinary Beauty Services</h2>
 
-  <!-- Kartu 1 -->
+   <!-- Kartu 1 -->
   <div class="service-card-1">
     <div class="row align-items-center">
       <div class="col-md-6">
         <img src="{{ asset('assets/img/img1.png') }}" alt="Service Image 1">
       </div>
       <div class="col-md-6 service-content">
+        <p style="font-weight: 650;">
+        Salon Asih kini menghadirkan layanan Nail Art dan Gel untuk mempercantik tampilan kuku Anda!</p>
         <p>
-          Lorem ipsum dolor sit amet consectetur. Blandit at maecenas dui sed amet sit enim vitae. Amet purus dictum urna sagittis dignissim. At fermentum iaculis ullamcorper orci.
+         Bagi Anda yang ingin tampil lebih stylish dan percaya diri, layanan nail art kami siap memberikan sentuhan seni yang unik dan elegan pada kuku Anda. Mulai dari desain simpel yang manis hingga motif glamor yang menawan, semua dapat disesuaikan dengan gaya dan kepribadian Anda.
         </p>
-        <p>
-          Pellentesque id tempor lacus aliquet tempus vitae nibh habitasse consectetur. Augue quis cras blandit habitant neque. Faucibus vestibulum in nisl ligula ultrices et vehicula.
-        </p>
-        <button class="service-button">Konsultasi</button>
+        <button class="service-button" onclick="kirimPesanWhatsApp()">Konsultasi</button>
       </div>
     </div>
   </div>
@@ -75,8 +69,8 @@
   <div class="service-wrapper">
   <div class="service-card-right position-relative">
     <div class="service-content-right">
-      <p> Lorem ipsum dolor sit amet consectetur. Blandit at maecenas dui sed amet sit enim vitae. Amet purus dictum urna sagittis dignissim. At fermentum iaculis ullamcorper orci.</p>
-      <p>Pellentesque id tempor lacus aliquet tempus vitae nibh habitasse consectetur. Augue quis cras blandit habitant neque. Faucibus vestibulum in nisl ligula ultrices et vehicula.</p>
+      <p style="font-weight: 650;"> Salon Asih juga melayani rias pengantin profesional </p>
+      <p>untuk hari pernikahan Anda, serta menyediakan layanan peminjaman baju kebaya dan pakaian wisuda atau graduation. Dengan pilihan lengkap dan pelayanan ramah, kami siap membantu Anda tampil maksimal di setiap momen spesial.</p>
       <button class="service-button">Konsultasi</button>
     </div>
     <img src="{{ asset('assets/img/img2.png') }}" alt="Adat" class="image-inside-card-right">
@@ -91,15 +85,16 @@
         <img src="{{ asset('assets/img/img3.png') }}" alt="Service Image 3">
       </div>
       <div class="col-md-6 service-content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Blandit at maecenas dui sed amet sit enim vitae. Amet purus dictum urna sagittis dignissim. At fermentum iaculis ullamcorper orci.
+        <p style="font-weight: 650;">
+          Selain layanan salon, kami juga menyediakan berbagai aksesoris rambut, perhiasan cantik
         </p>
         <p>
-          Pellentesque id tempor lacus aliquet tempus vitae nibh habitasse consectetur. Augue quis cras blandit habitant neque. Faucibus vestibulum in nisl ligula ultrices et vehicula.
+          kosmetik berkualitas untuk menunjang penampilan Anda. Semua produk tersedia langsung di tempat — praktis dan terpercaya!
         </p>
         <button class="service-button">Konsultasi</button>
       </div>
     </div>
+  </div>
   </div>
 
 </div>

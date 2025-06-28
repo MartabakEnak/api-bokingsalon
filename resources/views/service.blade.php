@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Service</title>
+    <title>Salon Asih</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/logo_login.png') }}">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/logo_login.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Salon Asih</title>
+
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Import dari Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">

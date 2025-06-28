@@ -9,7 +9,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
-<body class="container-fluid d-flex flex-row row" > 
+<body class="container-fluid d-flex flex-row row" >
   <div class="d-flex  flex-column  col-2" style="background-color: #6B0606">
     <div class="">
       <h2 class="mb-4 mt-5" style="color:white">Salon Asih</h2>
@@ -23,7 +23,7 @@
       </div>
 
     </div> --}}
-    
+
   </div>
   <div class="col-10 mt-2">
     <div class="d-flex flex-col justify-content-between">
@@ -49,9 +49,9 @@
           <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
             @csrf
           </form>
-        </div> 
+        </div>
     </div>
-       
+
   <h3 class="mb-3">Daftar Pemesanan</h3>
   <div class="table-responsive">
     <table class="table table-bordered table-hover text-center align-middle">
