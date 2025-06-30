@@ -11,7 +11,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/last.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -31,17 +31,19 @@
 
 
 <!-- location -->
+
            <div class="container my-5">
   <div class="row g-4 justify-content-center">
     <div class="col-md-3 d-flex align-items-stretch">
-      <a class="text-amber-900 text-decoration-none" href="https://www.google.com/maps/search/?api=1&query=Jln. Pulau Bungin No.113 Denpasar Selatan" style="display: block;" target="_blank">
+      <a class="text-amber-900 text-decoration-none" href="https://maps.app.goo.gl/DcwwWKAL8tERh1CU9" style="display: block;" target="_blank">
         <div class="info-box w-100 h-100">
         <i class="bi bi-geo-alt-fill"></i>
-        <p class="mb-0"><a class="text-amber-900 text-decoration-none" href="https://www.google.com/maps/search/?api=1&query=Jln. Pulau Bungin No.113 Denpasar Selatan" target="_blank">Jln. Pulau Bungin No.113</a></p>
-        <p class="mb-0"><a class="text-amber-900 text-decoration-none" href="https://www.google.com/maps/search/?api=1&query=Jln. Pulau Bungin No.113 Denpasar Selatan" target="_blank">Denpasar Selatan</p>
+        <p class="mb-0"><a class="text-amber-900 text-decoration-none" href="https://maps.app.goo.gl/DcwwWKAL8tERh1CU9" target="_blank">Jln. Pulau Bungin No.113</a></p>
+        <p class="mb-0"><a class="text-amber-900 text-decoration-none" href="https://maps.app.goo.gl/DcwwWKAL8tERh1CU9" target="_blank">Denpasar Selatan</p>
       </div>
       </a>
     </div>
+<!-- email -->
     <div class="col-md-3 d-flex align-items-stretch">
       <a class="text-amber-900 text-decoration-none" href="https://mail.google.com/mail/?view=cm&fs=1&to=salonasih1991@gmail.com&su=&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda." target="_blank" style="display: block;">
       <div class="info-box w-100 h-100">

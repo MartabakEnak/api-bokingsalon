@@ -9,7 +9,7 @@
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Salon Asih</title>
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/last.css') }}">
         <!-- Import dari Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
@@ -33,23 +33,34 @@
            <div class="container my-5">
   <div class="row g-4 justify-content-center">
     <div class="col-md-3 d-flex align-items-stretch">
-      <div class="info-box w-100 h-100">
+      <a class="text-amber-900 text-decoration-none" href="https://maps.app.goo.gl/DcwwWKAL8tERh1CU9" style="display: block;" target="_blank">
+        <div class="info-box w-100 h-100">
         <i class="bi bi-geo-alt-fill"></i>
-        <p class="mb-0">Jln. Pulau Bungin No.113</p>
-        <p class="mb-0">Denpasar Selatan</p>
+        <p class="mb-0"><a class="text-amber-900 text-decoration-none" href="https://maps.app.goo.gl/DcwwWKAL8tERh1CU9" target="_blank">Jln. Pulau Bungin No.113</a></p>
+        <p class="mb-0"><a class="text-amber-900 text-decoration-none" href="https://maps.app.goo.gl/DcwwWKAL8tERh1CU9" target="_blank">Denpasar Selatan</p>
       </div>
+      </a>
     </div>
+<!-- email -->
     <div class="col-md-3 d-flex align-items-stretch">
-      <div class="info-box w-100 h-100">
-        <i class="bi bi-envelope-fill"></i>
-        <p class="mb-0"><u>SalonAsih@gmail.com</u></p>
-      </div>
+  <a class="text-amber-900 text-decoration-none w-100 h-100" href="mailto:salonasih1991@gmail.com?subject=Subjek%20Pesan&body=Halo,%0A%0ATerima%20kasih%20atas%20pertanyaan%20Anda." style="display: block;">
+    <div class="info-box w-100 h-100">
+      <i class="bi bi-envelope-fill"></i>
+      <p class="mb-0">salonasih1991@gmail.com</p>
     </div>
+  </a>
+</div>
+
+<!-- whatsapp -->
     <div class="col-md-3 d-flex align-items-stretch">
-      <div class="info-box w-100 h-100">
-        <i class="bi bi-whatsapp"></i>
-        <p class="mb-0">0123456789</p>
-      </div>
+      <a href="https://wa.me/6285739589921?text=Terimakasih%20sudah%20menghubungi%20kami!%0ASilahkan%20bertanya%20mengenai%20reservasi%20booking%20atau%20berkonsultasi%20dengan%20admin%20kami!" target="_blank" class="text-decoration-none" style="display: block;">
+        <div class="info-box w-100 h-100">
+          <i class="bi bi-whatsapp"></i>
+          <p>
+            <a class="text-amber-900 text-decoration-none" class="mb-0">Klik Disni</a>
+          </p>
+        </div>
+      </https:>
     </div>
   </div>
 </div>

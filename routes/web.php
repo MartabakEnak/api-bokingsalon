@@ -31,7 +31,7 @@ Route::get('/service2', function () {return view('service2'); });
 
 Route::get('/welcome2', function () {
     return view('welcome2');
-})->name('welcome2'); // ← WAJIB ADA INI
+})->name('welcome2');
 
 
 // Halaman admin manual (tanpa login) untuk testing

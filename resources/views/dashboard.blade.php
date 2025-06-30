@@ -15,13 +15,6 @@
     <body>
          <!-- Navbar -->
 @include('partials.navbarlogin')
-{{-- @if (Auth::check()) --}}
-        {{-- Header untuk pengguna yang sudah login --}}
-        {{-- @include('partials.navbarlogin')
-    @else --}}
-        {{-- Header untuk pengguna yang belum login --}}
-        {{-- @include('partials.navbar')
-    @endif --}}
 
   <!-- Hero Title -->
   <div class="hero bg-white">
@@ -155,84 +148,115 @@
                         </div>
                     </div>
 
-                    <div class="text-center mt-4">
-                        <a class=" {{ Request::is('service') ? 'active' : '' }}" href="service">View all</a>
-                    </div>
+<div class="text-center mt-4">
+    <a href="{{ url('/service2') }}"
+       class="btn {{ Request::is('service2') ? 'active' : '' }}"
+       style="border: 2px solid #6B0606; color: white; background-color: #6B0606; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+       View all
+    </a>
+</div>
+
                 </div>
             </div>
         </div>
     </div>
 
-        <!-- Testimonials Section -->
-    <div class="testimonial-section">
-        <div class="container">
-            <h1 class="text-center testimonial-header">Testimonials</h1>
-            <p class="text-center mb-5 testimonial-header">Definimal your main home juice to improve your organic water appetite and freight automation.</p>
+  <!-- Testimonials Section -->
+<div class="testimonial-section py-5 bg-light">
+    <div class="container">
+        <h1 class="text-center testimonial-header">Testimonials</h1>
+        <p class="text-center mb-5 testimonial-header">
+            Simak pengalaman pelanggan kami yang telah merasakan layanan terbaik dari Salon Asih. Kepuasan Anda adalah prioritas kami!
+        </p>
 
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <!-- Testimonial 1 -->
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">
-                                <div class="testimonial-card">
-                                    <img src="{{ asset('assets/img/rias.png') }}" alt="Customer" class="testimonial-profile">
-                                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                                    <p class="testimonial-text">Welcome to Sales Auto target manuals. Adapted with mechanical design and technology, sales downloads. Sign more info for your first manual in case of failure.</p>
-                                    <p class="testimonial-author">Sarah Johnson <span class="testimonial-role">Pelanggan Setia</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div id="testimonialCarousel" class="carousel slide">
+            <div class="carousel-inner">
+                <!-- Testimonial 1 -->
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="testimonial-card p-4 border rounded shadow bg-white text-center">
+                                <img src="{{ asset('assets/img/rias.png') }}" alt="Customer"
+     class="testimonial-profile mb-3 rounded-circle border border-danger mx-auto d-block"
+     style="width: 100px; height: 100px; object-fit: cover;">
 
-                    <!-- Testimonial 2 -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">
-                                <div class="testimonial-card">
-                                    <img src="{{ asset('assets/img/rias.png') }}" alt="Customer" class="testimonial-profile">
-                                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                                    <p class="testimonial-text">Welcome to Sales Auto target manuals. Adapted with mechanical design and technology, sales downloads. Sign more info for your first manual in case of failure.</p>
-                                    <p class="testimonial-author">Michael Brown <span class="testimonial-role">Pelanggan Baru</span></p>
+                                <div class="testimonial-quote text-secondary mb-3">
+                                    <i class="fas fa-quote-left fa-2x"></i>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">
-                                <div class="testimonial-card">
-                                    <img src="{{ asset('assets/img/rias.png') }}" alt="Customer" class="testimonial-profile">
-                                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                                    <p class="testimonial-text">Welcome to Sales Auto target manuals. Adapted with mechanical design and technology, sales downloads. Sign more info for your first manual in case of failure.</p>
-                                    <p class="testimonial-author">Lisa Wang <span class="testimonial-role">Pelanggan Premium</span></p>
-                                </div>
+                                <p class="testimonial-text fst-italic">
+                                    "Pelayanan di Salon Asih benar-benar luar biasa! Stafnya ramah, tempatnya bersih, dan hasil riasannya memuaskan. Saya pasti akan kembali lagi."
+                                </p>
+                                <p class="testimonial-author mt-3 fw-bold">
+                                    Sarah<br>
+                                    <span class="testimonial-role text-muted">Pelanggan Setia</span>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Carousel Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <!-- Testimonial 2 -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="testimonial-card p-4 border rounded shadow bg-white text-center">
+                                <<img src="{{ asset('assets/img/rias.png') }}" alt="Customer"
+     class="testimonial-profile mb-3 rounded-circle border border-danger mx-auto d-block"
+     style="width: 100px; height: 100px; object-fit: cover;">
 
-                <!-- Carousel Indicators -->
-                <div class="carousel-indicators" style="position: relative; margin-top: 30px;">
-                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <div class="testimonial-quote text-secondary mb-3">
+                                    <i class="fas fa-quote-left fa-2x"></i>
+                                </div>
+                                <p class="testimonial-text fst-italic">
+                                    Salon Asih selalu menjadi pilihan utama saya. Dari potong rambut sampai perawatan wajah, semuanya dilakukan dengan profesional dan teliti.
+                                </p>
+                                <p class="testimonial-author mt-3 fw-bold">
+                                    dek ulik<br>
+                                    <span class="testimonial-role text-muted">Pelanggan Baru</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="testimonial-card p-4 border rounded shadow bg-white text-center">
+                                <img src="{{ asset('assets/img/rias.png') }}" alt="Customer"
+     class="testimonial-profile mb-3 rounded-circle border border-danger mx-auto d-block"
+     style="width: 100px; height: 100px; object-fit: cover;">
+
+                                <div class="testimonial-quote text-secondary mb-3">
+                                    <i class="fas fa-quote-left fa-2x"></i>
+                                </div>
+                                <p class="testimonial-text fst-italic">
+                                    Pertama kali mencoba perawatan di Salon Asih dan saya sangat terkesan. Prosesnya nyaman, hasilnya maksimal. Sangat direkomendasikan!
+                                </p>
+                                <p class="testimonial-author mt-3 fw-bold">
+                                    rania<br>
+                                    <span class="testimonial-role text-muted">Pelanggan Premium</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Manual Controls with Red Arrows -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: brightness(0) saturate(100%) invert(14%) sepia(91%) saturate(4250%) hue-rotate(349deg) brightness(90%) contrast(95%);"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="filter: brightness(0) saturate(100%) invert(14%) sepia(91%) saturate(4250%) hue-rotate(349deg) brightness(90%) contrast(95%);"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
+</div>
+
 <!-- History -->
     <section class="history-section text-center">
         <div class="container">
