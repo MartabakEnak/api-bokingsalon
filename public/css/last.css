@@ -1,0 +1,14 @@
+
+  .info-box {
+    background-color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .info-box:hover {
+    background-color: #f0f0f0; /* abu-abu muda */
+    transform: translateY(-5px); /* animasi naik sedikit */
+  }
+

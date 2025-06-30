@@ -17,9 +17,10 @@
 <body>
     @include('partials.navbar')
   <!-- Hero Title -->
-  <div class="hero bg-white">
-    <h1>About us</h1>
-  </div>
+  <div class="container mx-auto py-6">
+    <div class="hero bg-white">
+      <h1>about us</h1>
+    </div>
 
 <div class="image-wrapper">
     <img src="{{ asset('assets/img/fotopegawai.png') }}" alt="Tim Salon" class="tim-image">
@@ -40,15 +41,13 @@
     <div class="col-md-6">
   <div class="hero-image-box w-100" style="background-image: url('{{ asset('assets/img/aboutous1.jpg') }}'); background-size: cover; background-position: top center; height: 400px; border-radius: 12px;">
   </div>
-</div>
-
   </div>
 </div>
 
 <div class="container section-services">
   <h2 class="section-title">Beyond Ordinary Beauty Services</h2>
 
-   <!-- Kartu 1 -->
+  <!-- Kartu 1 -->
   <div class="service-card-1">
     <div class="row align-items-center">
       <div class="col-md-6">
@@ -71,7 +70,7 @@
     <div class="service-content-right">
       <p style="font-weight: 650;"> Salon Asih juga melayani rias pengantin profesional </p>
       <p>untuk hari pernikahan Anda, serta menyediakan layanan peminjaman baju kebaya dan pakaian wisuda atau graduation. Dengan pilihan lengkap dan pelayanan ramah, kami siap membantu Anda tampil maksimal di setiap momen spesial.</p>
-      <button class="service-button">Konsultasi</button>
+      <button class="service-button" onclick="kirimPesanWhatsApp()">Konsultasi</button>
     </div>
     <img src="{{ asset('assets/img/img2.png') }}" alt="Adat" class="image-inside-card-right">
   </div>
@@ -91,13 +90,19 @@
         <p>
           kosmetik berkualitas untuk menunjang penampilan Anda. Semua produk tersedia langsung di tempat — praktis dan terpercaya!
         </p>
-        <button class="service-button">Konsultasi</button>
+        <button class="service-button" onclick="kirimPesanWhatsApp()">Konsultasi</button>
       </div>
     </div>
   </div>
-  </div>
 
 </div>
-    @include('partials.footer')
+  </div>
+  <script>
+  function kirimPesanWhatsApp() {
+    const url = "https://wa.me/6285739589921?text=Terimakasih%20sudah%20menghubungi%20kami!%0ASilahkan%20bertanya%20mengenai%20reservasi%20booking%20atau%20berkonsultasi%20dengan%20admin%20kami!";
+    window.open(url, "_blank"); // Buka di tab baru
+  }
+</script>
 </body>
+@include('partials.footer')
 </html>
