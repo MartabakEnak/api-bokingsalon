@@ -97,12 +97,14 @@
 
 </div>
   </div>
+    </div>
+
   <script>
   function kirimPesanWhatsApp() {
     const url = "https://wa.me/6285739589921?text=Terimakasih%20sudah%20menghubungi%20kami!%0ASilahkan%20bertanya%20mengenai%20reservasi%20booking%20atau%20berkonsultasi%20dengan%20admin%20kami!";
     window.open(url, "_blank"); // Buka di tab baru
   }
 </script>
-</body>
 @include('partials.footer')
+</body>
 </html>

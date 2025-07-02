@@ -24,7 +24,7 @@
 
     <!-- Hero Image (Full Width) -->
     <div class="hero-image-wrapper mx-0 px-0">
-        <img src="{{ asset('assets/img/hero.png') }}" alt="hero-image" class="w-100 d-block">
+        <img src="{{ asset('assets/img/herocontacus.jpg') }}" alt="hero-image" class="w-100 d-block">
     </div>
 
     <!-- Hero Section -->

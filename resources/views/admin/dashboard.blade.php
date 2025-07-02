@@ -14,16 +14,6 @@
     <div class="">
       <h2 class="mb-4 mt-5" style="color:white">Salon Asih</h2>
     </div>
-    {{-- <div class=" d-flex  flex-column align-center">
-      <div class="">
-        <a href="">Dashboard</a>
-      </div>
-      <div class="">
-        <a href="">Dashboard</a>
-      </div>
-
-    </div> --}}
-
   </div>
   <div class="col-10 mt-2">
     <div class="d-flex flex-col justify-content-between">

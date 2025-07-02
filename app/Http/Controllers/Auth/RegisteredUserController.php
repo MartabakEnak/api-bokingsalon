@@ -11,6 +11,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OtpMail;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
+
+
 
 class RegisteredUserController extends Controller
 {
@@ -28,21 +35,41 @@ class RegisteredUserController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
-    {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+{
+    $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+        'password' => ['required', 'confirmed', Rules\Password::defaults()],
+    ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+    $user = User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+    ]);
 
-        event(new Registered($user));
+    // Event Laravel Breeze tetap berjalan
+    event(new Registered($user));
 
-        return redirect('/login')->with('status', 'Registration successful. Please login.');
-    }
+    // OTP manual
+    $otpCode = rand(100000, 999999);
+
+    DB::table('otps')->insert([
+        'email' => $user->email,
+        'otp' => $otpCode,
+        'expires_at' => now()->addMinutes(10),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    // Kirim email OTP
+    Mail::to($user->email)->send(new \App\Mail\OtpMail($otpCode));
+
+    // Langsung login user
+    // Auth::login($user);
+
+    // Redirect ke halaman verifikasi OTP
+    return redirect()->route('otp.verify.page');
+}
+
 }

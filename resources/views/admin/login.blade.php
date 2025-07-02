@@ -21,38 +21,45 @@
             style="max-width: 500px; width: 100%; border-radius: 20px; padding: 2.5rem; background-color: rgba(255, 255, 255, 0.95);">
 
             <!-- Logo -->
-            <div class="text-center">
-                <img src="{{ asset('assets/img/logo_login.png') }}" alt="Logo"
-                    style="width: 60px; margin-bottom: 1rem;">
-            </div>
+<div class="text-center">
+    <img src="{{ asset('assets/img/logo_login.png') }}" alt="Logo"
+        style="width: 60px; margin-bottom: 1rem;">
+</div>
 
-            <h2 class="text-center fw-bold mb-1">LOGIN ADMIN</h2>
-            <p class="text-center text-muted mb-4"></p>
+<h2 class="text-center fw-bold mb-1">LOGIN ADMIN</h2>
+<p class="text-center text-muted mb-4"></p>
 
-            <!-- Form Login -->
-            <form method="POST" action="{{ route('admin.login') }}">
-                @csrf
+<!-- Pesan sukses setelah verifikasi OTP -->
+@if (session('status'))
+    <div class="alert alert-success text-center">
+        {{ session('status') }}
+    </div>
+@endif
 
-                <div class="position-relative mb-4">
-                    <i class="bi bi-person-fill position-absolute"
-                        style="left: 15px; top: 50%; transform: translateY(-50%); color: #7B0000;"></i>
-                    <input type="email" name="email" class="form-control ps-5" placeholder="Masukan Email" required
-                        style="border-radius: 10px; background-color: #e0e0e0; border: none;">
-                </div>
+<!-- Form Login -->
+<form method="POST" action="{{ route('admin.login') }}">
+    @csrf
 
-                <div class="position-relative mb-4">
-                    <i class="bi bi-lock-fill position-absolute"
-                        style="left: 15px; top: 50%; transform: translateY(-50%); color: #7B0000;"></i>
-                    <input type="password" name="password" class="form-control ps-5" placeholder="Masukan password"
-                        required style="border-radius: 10px; background-color: #e0e0e0; border: none;">
-                </div>
+    <div class="position-relative mb-4">
+        <i class="bi bi-person-fill position-absolute"
+            style="left: 15px; top: 50%; transform: translateY(-50%); color: #7B0000;"></i>
+        <input type="email" name="email" class="form-control ps-5" placeholder="Masukan Email" required
+            style="border-radius: 10px; background-color: #e0e0e0; border: none;">
+    </div>
 
-                <!-- Tombol Login -->
-                <div class="d-grid mb-3">
-                    <button type="submit" class="btn"
-                        style="background-color: #7B0000; color: white; font-weight: bold; border-radius: 10px;">Login</button>
-                </div>
-            </form>
+    <div class="position-relative mb-4">
+        <i class="bi bi-lock-fill position-absolute"
+            style="left: 15px; top: 50%; transform: translateY(-50%); color: #7B0000;"></i>
+        <input type="password" name="password" class="form-control ps-5" placeholder="Masukan password"
+            required style="border-radius: 10px; background-color: #e0e0e0; border: none;">
+    </div>
+
+    <!-- Tombol Login -->
+    <div class="d-grid mb-3">
+        <button type="submit" class="btn"
+            style="background-color: #7B0000; color: white; font-weight: bold; border-radius: 10px;">Login</button>
+    </div>
+</form>
 
         </div>
     </div>
