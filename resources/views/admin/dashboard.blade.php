@@ -10,21 +10,10 @@
 
 </head>
 <body class="container-fluid d-flex flex-row row" >
-  <div class="d-flex  flex-column  col-2" style="background-color: #6B0606">
-    <div class="">
-      <h2 class="mb-4 mt-5" style="color:white">Salon Asih</h2>
-    </div>
-    {{-- <div class=" d-flex  flex-column align-center">
-      <div class="">
-        <a href="">Dashboard</a>
-      </div>
-      <div class="">
-        <a href="">Dashboard</a>
-      </div>
+    <!-- Sidebar -->
+    @include('partials.sidebaradmin')
 
-    </div> --}}
 
-  </div>
   <div class="col-10 mt-2">
     <div class="d-flex flex-col justify-content-between">
         <div class="d-flex flex-col">
@@ -37,22 +26,13 @@
                   <div class="">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                   </div>
-
                 </div>
               </form>
             </nav>
           </div>
-          <div class=" mt-2">
-          <a href="{{ route('admin.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-danger mb-3">
-            Logout
-          </a>
-          <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
-            @csrf
-          </form>
-        </div>
     </div>
 
-  <h3 class="mb-3">Daftar Pemesanan</h3>
+  {{-- <h3 class="mb-3">Daftar Pemesanan</h3>
   <div class="table-responsive">
     <table class="table table-bordered table-hover text-center align-middle">
       <thead class="table-dark">
@@ -291,7 +271,7 @@
 
 
   </script>
-  </div>
+  </div> --}}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -213,6 +213,16 @@ public function selesaikan($id)
         ], 500);
     }
 }
+// public function adminIndex()
+// {
+//     $bookings = Pemesanan::with('layanan')
+//         ->orderBy('tanggal', 'desc')
+//         ->orderBy('jam', 'desc')
+//         ->paginate(10);
+
+//     return view('admin.dashboard', compact('bookings'));
+// }
+
 
 
 

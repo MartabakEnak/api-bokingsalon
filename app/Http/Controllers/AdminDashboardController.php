@@ -14,12 +14,12 @@ class AdminDashboardController extends Controller
         return view('admin.dashboard', compact('data'));
     }
     public function konfirmasi($id)
-{
-    $pemesanan = Pemesanan::findOrFail($id);
-    $pemesanan->status_pembayaran = 'diterima';
-    $pemesanan->save();
+    {
+        $pemesanan = Pemesanan::findOrFail($id);
+        $pemesanan->status_pembayaran = 'diterima';
+        $pemesanan->save();
 
-    return redirect()->route('admin.dashboard')->with('success', 'Pemesanan telah dikonfirmasi.');
-}
+        return redirect()->route('admin.dashboard')->with('success', 'Pemesanan telah dikonfirmasi.');
+    }
 
 }

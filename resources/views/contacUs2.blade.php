@@ -52,6 +52,7 @@
       </div>
       </a>
     </div>
+    <!-- whatsapp -->
     <div class="col-md-3 d-flex align-items-stretch">
       <a href="https://wa.me/6285739589921?text=Terimakasih%20sudah%20menghubungi%20kami!%0ASilahkan%20bertanya%20mengenai%20reservasi%20booking%20atau%20berkonsultasi%20dengan%20admin%20kami!" target="_blank" class="text-decoration-none" style="display: block;">
         <div class="info-box w-100 h-100">

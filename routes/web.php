@@ -9,6 +9,8 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\PembayaranController;
 use App\Models\Layanan;
 use App\Http\Controllers\WhatsappController;
+use App\Http\Controllers\Auth\OtpController;
+use App\Http\Controllers\AdminDataPesananController;
 /*
 |--------------------------------------------------------------------------
 | Halaman Umum (tanpa login)
@@ -96,6 +98,13 @@ Route::post('/admin/konfirmasi/{id}', [AdminDashboardController::class, 'konfirm
 Route::get('/riwayat2', [PemesananController::class, 'riwayat2'])->middleware('auth');
 Route::get('/riwayat/cetak/{id}', [PemesananController::class, 'cetak'])->name('riwayat.cetak');
 
+Route::prefix('admin')->middleware('auth:admin')->group(function () {
+    Route::get('/pesanan', [AdminDataPesananController::class, 'index'])->name('admin.pesanan');
+});
+Route::put('/pesanan/{id}', [AdminDataPesananController::class, 'update'])->name('admin.pesanan.update');
+Route::delete('/pesanan/{id}', [AdminDataPesananController::class, 'destroy'])->name('admin.pesanan.destroy');
+Route::get('/data-pesanan', [AdminDataPesananController::class, 'index'])
+    ->name('admin.data_pesanan'); 
 
 
 
@@ -120,3 +129,7 @@ Route::put('/api/konfirmasi/{id}', [PemesananController::class, 'confirm']);
 
 Route::put('/selesai/{id}', [PemesananController::class, 'selesaikan']);
 
+// Route::get('/admin/dashboard', [PemesananController::class, 'adminIndex'])->name('admin.dashboard');
+
+Route::get('/verify-otp', [OtpController::class, 'show'])->name('otp.verify.page');
+Route::post('/verify-otp', [OtpController::class, 'verify'])->name('otp.verify');
