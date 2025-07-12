@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDataPesananController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PemesananController;
 use App\Models\Layanan;
@@ -24,9 +25,6 @@ Route::get('/antrean-sekarang', [PemesananController::class, 'antreanSekarang'])
 
 // konfirmasi pesanan
 Route::post('/bookings/confirm/{id}', [PemesananController::class, 'confirm']);
-// menyelesaikan pesanan oleh admin
-// Route::put('/selesai/{id}', [PemesananController::class, 'selesaikan']);
-
 
 Route::post('/send-whatsapp', [WhatsappController::class, 'send']);
 Route::get('/check-api', function () {

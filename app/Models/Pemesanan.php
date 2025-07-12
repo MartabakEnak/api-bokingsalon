@@ -13,26 +13,22 @@ class Pemesanan extends Model
     protected $table = 'pemesanan';
 
     protected $fillable = [
-    'user_id',
-    'nama_pelanggan',
-    'no_telepon',
-    'layanan_id',
-    'tanggal',
-    'jam',
-    'status_pembayaran',
-    'snap_token',
-    'no_antrean',
-    'status_pengerjaan',
-
-];
+        'user_id',
+        'name',
+        'phone_number',
+        'booking_date',
+        'booking_time',
+        'status',
+        'total_price',
+    ];
 
     public function layanan()
-{
-    return $this->belongsTo(Layanan::class, 'layanan_id');
-}
+    {
+        return $this->belongsToMany(Layanan::class, 'pemesanan_layanan');
+    }
 
     public function user()
-{
-    return $this->belongsTo(User::class);
-}
+    {
+        return $this->belongsTo(User::class);
+    }
 }

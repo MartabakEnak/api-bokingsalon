@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Salon Asih</title>
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     @include('partials.navbarlogin')
 
@@ -24,88 +26,71 @@
         <h1 class="display-4">Riwayat Pemesanan</h1>
     </div>
 
+    <div class="container mb-4 min-vh-100">
 
+        @if ($pemesanan->isEmpty())
+            <div class="bg-yellow-100 text-yellow-800 px-4 py-3 rounded shadow text-center">
+                Kamu belum pernah melakukan booking.
+            </div>
+        @else
+            <div class="grid sm:grid-cols-2 gap-4 ">
+                @foreach ($pemesanan as $booking)
+                    <div class="border rounded-xl shadow-md p-6 bg-white">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h2 class="text-lg font-semibold">
+                                    Booking Tanggal {{ \Carbon\Carbon::parse($booking->booking_date)->format('d M Y') }}
+                                    -
+                                    {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}
+                                </h2>
+                                <p class="text-sm text-gray-500">Nomor HP: {{ $booking->phone_number }}</p>
+                            </div>
 
-    <div class="container my-4">
-        <div class="table-responsive">
-            <table class="table table-bordered table-striped">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Kuitansi</th>
-                        <th>Nama</th>
-                        <th>Tanggal</th>
-                        <th>Waktu</th>
-                        <th>Layanan</th>
-                        <th>Status</th>
-                        <th>Pengerjaan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse($pemesanan as $pesanan)
-                        <tr>
+                            <div
+                                class="ml-auto px-3 py-1 text-sm rounded-full 
+                                 @if ($booking->status == 'pending') bg-yellow-100 text-yellow-800 
+                                 @elseif($booking->status == 'approved') bg-blue-100 text-blue-800 
+                                 @elseif($booking->status == 'paid') bg-green-100 text-green-800 
+                                 @else bg-red-100 text-red-800 @endif">
+                                {{ ucfirst($booking->status) }}
+                            </div>
+                        </div>
 
+                        <div>
+                            <p class="font-medium mb-2">Layanan Dipilih:</p>
+                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                @foreach ($booking->layanan as $service)
+                                    <li>{{ $service->name }} - Rp{{ number_format($service->price) }}
+                                        ({{ $service->duration }} menit)
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
 
-                            <td class="text-center">
-                                <a href="{{ route('riwayat.cetak', $pesanan->id) }}" class="btn btn-sm btn-primary" target="_blank">
-                                    kuitansi
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="text-lg font-bold text-green-700">
+                                Total: Rp{{ number_format($booking->total_price) }}
+                            </div>
+
+                            @if ($booking->status === 'approved')
+                                <a href="{{ route('bayar', $booking->id) }}"
+                                    class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow text-sm font-semibold text no-underline">
+                                    Lanjutkan Pembayaran
                                 </a>
-                            </td>
-                            <td class="text-center">{{ $pesanan->user->name ?? 'Tidak diketahui' }}</td>
-                            <td class="text-center">{{ \Carbon\Carbon::parse($pesanan->tanggal)->format('d M Y') }}</td>
-                            <td class="text-center">{{ $pesanan->jam ?? '-' }}</td>
-                            <td class="text-center">{{ $pesanan->layanan->nama ?? '-' }}</td>
-                            <td class="text-center">
-                                <span class="badge bg-{{ strtolower($pesanan->status_pembayaran) === 'diterima' ? 'success' : 'secondary' }}">
-                                    {{ ucfirst($pesanan->status_pembayaran) }}
-                                </span>
-                            </td>
-                            <td class="text-center">
-    @if ($pesanan->status_pengerjaan === 'selesai')
-        <span class="badge bg-success">Selesai</span>
-    @elseif ($pesanan->status_pengerjaan === 'diproses')
-        <span class="badge bg-warning text-dark">Diproses</span>
-    @else
-        <span class="badge bg-secondary">Belum</span>
-    @endif
-</td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="7" class="text-center">Belum ada pemesanan.</td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
-        </div>
+                            @endif
+                            @if ($booking->status === 'paid')
+                                <a href="{{ route('riwayat.cetak', $booking->id) }}"
+                                    class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded shadow text-sm font-semibold text no-underline">
+                                    Cetak Nota
+                                </a>
+                            @endif
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @endif
     </div>
-    <script>
-    fetch('api/antrean-sekarang')
-        .then(response => response.json())
-        .then(data => {
-            const antrean = parseInt(data.antrean_sekarang);
-            const displayAntrean = isNaN(antrean) ? 1 : antrean;
-
-            document.getElementById('antreanSekarang').innerText = displayAntrean;
-
-            // Estimasi waktu pengerjaan (misal mulai dari jam 09:00)
-            const jamMulai = 9;
-            const estimasi = new Date();
-            estimasi.setHours(jamMulai + (displayAntrean - 1));
-            estimasi.setMinutes(0);
-            estimasi.setSeconds(0);
-
-            const jam = estimasi.getHours().toString().padStart(2, '0');
-            const menit = estimasi.getMinutes().toString().padStart(2, '0');
-
-            document.getElementById('estimasiWaktu').innerText = `${jam}:${menit}`;
-        })
-        .catch(err => {
-            document.getElementById('estimasiWaktu').innerText = 'Gagal memuat estimasi';
-            console.error('Gagal ambil data antrean:', err);
-        });
-</script>
-
-
     @include('partials.footer')
 </body>
+
 </html>

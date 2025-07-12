@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('pemesanan', function (Blueprint $table) {
-            $table->integer('no_antrean')->nullable()->after('status_pembayaran');
+        Schema::create('layanan', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->integer('price');
+            $table->integer('duration');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('pemesanan', function (Blueprint $table) {
-            $table->dropColumn('no_antrean');
-        });
+        Schema::dropIfExists('layanan');
     }
 };

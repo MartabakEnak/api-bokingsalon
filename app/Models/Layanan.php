@@ -7,7 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Layanan extends Model
 {
-    use HasFactory;
+    protected $table = 'layanan';
+    protected $fillable = ['name', 'price', 'duration'];
 
-    protected $table = 'layanan'; // atau 'layanans' sesuai nama tabelnya
+
+    public function pemesanan()
+    {
+        return $this->belongsToMany(Pemesanan::class, 'pemesanan_layanan');
+    }
+
+    public function kategori()
+    {
+        return $this->belongsTo(KategoriLayanan::class, 'kategori_id');
+    }
 }
