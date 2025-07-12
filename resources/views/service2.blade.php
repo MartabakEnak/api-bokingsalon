@@ -52,12 +52,13 @@
                 <div class="col-md-7">
                     <h4 class="mb-3 fw-bold" style="color:#7B0000;">SULAM</h4>
                     <ul class="list-unstyled">
-                        <li>Daily make up <span class="float-end text-muted">from 100.000</span></li>
-                        <li>Night make up <span class="float-end text-muted">from 100.000</span></li>
-                        <li>Bridal make up <span class="float-end text-muted">from 100.000</span></li>
-                        <li>Ocassion make up <span class="float-end text-muted">from 100.000</span></li>
-                        <li>Television make up <span class="float-end text-muted">from 100.000</span></li>
-                    </ul>
+    <li>Sulam Alis Natural <span class="float-end text-muted">from Rp. 500.000</span></li>
+    <li>Sulam Alis Shading <span class="float-end text-muted">from Rp. 600.000</span></li>
+    <li>Sulam Alis Ombre <span class="float-end text-muted">from Rp. 650.000</span></li>
+    <li>Sulam Alis 6D <span class="float-end text-muted">from Rp. 700.000</span></li>
+    <li>Touch Up Sulam Alis <span class="float-end text-muted">from Rp. 300.000</span></li>
+</ul>
+
                     <a href="{{ route('pemesanan.create') }}" class="fw-bold" style="color:#7B0000;">Booking</a>
                     <a class="fw-bold" style="color:#7B0000;">/</a>
                     <a href="contacUs" class="fw-bold" style="color:#7B0000;">konsultasi</a>
@@ -72,12 +73,13 @@
                 <div class="col-md-7">
                     <h4 class="mb-1 fw-bold" style="color:#7B0000;">Hair styling</h4>
                     <ul class="list-unstyled">
-                        <li>Simple haircut <span class="float-end text-muted">from Rp. 100.000</span></li>
-                        <li>Hair Styling <span class="float-end text-muted">from Rp. 100.000</span></li>
-                        <li>Full hair color <span class="float-end text-muted">from Rp. 100.000</span></li>
-                        <li>Protein treatment <span class="float-end text-muted">from Rp. 100.000</span></li>
-                        <li>Hair mask <span class="float-end text-muted">from Rp. 100.000</span></li>
-                    </ul>
+    <li>Simple haircut <span class="float-end text-muted">from Rp. 70.000</span></li>
+    <li>Hair Styling <span class="float-end text-muted">from Rp. 90.000</span></li>
+    <li>Full hair color <span class="float-end text-muted">from Rp. 250.000</span></li>
+    <li>Protein treatment <span class="float-end text-muted">from Rp. 200.000</span></li>
+    <li>Hair mask <span class="float-end text-muted">from Rp. 150.000</span></li>
+</ul>
+
                     <a href="{{ route('pemesanan.create') }}" class="fw-bold" style="color:#7B0000;">Booking</a>
                     <a class="fw-bold" style="color:#7B0000;">/</a>
                     <a href="{{ route('pemesanan.create') }}" class="fw-bold" style="color:#7B0000;">Konsultasi</a>
