@@ -98,21 +98,7 @@ class AdminDataPesananController extends Controller
         ));
     }
 
-    // public function update(Request $request, $id)
-    // {
-    //     $pemesanan = Pemesanan::findOrFail($id);
-    //     $pemesanan->update($request->all());
 
-    //     return redirect()->route('admin.pesanan')->with('success', 'Data pemesanan berhasil diperbarui.');
-    // }
-
-    // public function destroy($id)
-    // {
-    //     $pemesanan = Pemesanan::findOrFail($id);
-    //     $pemesanan->delete();
-
-    //     return redirect()->route('admin.pesanan')->with('success', 'Data pemesanan berhasil dihapus.');
-    // }
 
     public function update(Request $request, $id)
     {

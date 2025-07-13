@@ -18,13 +18,7 @@
     <body>
          <!-- Navbar -->
 @include('partials.navbarlogin')
-{{-- @if (Auth::check()) --}}
-        {{-- Header untuk pengguna yang sudah login --}}
-        {{-- @include('partials.navbarlogin')
-    @else --}}
-        {{-- Header untuk pengguna yang belum login --}}
-        {{-- @include('partials.navbar')
-    @endif --}}
+
 
   <!-- Hero Title -->
   <div class="hero bg-white">

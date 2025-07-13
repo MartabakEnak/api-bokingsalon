@@ -109,10 +109,6 @@ Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('adm
 Route::post('/admin/login', [AdminAuthController::class, 'login']);
 Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
-// Dashboard Admin dan aksi konfirmasi
-// Route::post('/admin/konfirmasi/{id}', [AdminDashboardController::class, 'konfirmasi'])->name('admin.konfirmasi');
-
-// Route::get('/riwayat2', [PemesananController::class, 'riwayat2'])->name('riwayat')->middleware('auth');
 
 
 Route::get('/data-pesanan', [AdminDataPesananController::class, 'index'])
@@ -125,22 +121,6 @@ Route::get('/riwayat', [PemesananController::class, 'riwayat']);
 
 
 
-// Route yang hanya bisa diakses setelah login admin
-// Route::middleware(['auth:admin'])->group(function () {
-//     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-//     Route::post('/admin/pemesanan/konfirmasi/{id}', [AdminController::class, 'konfirmasi'])->name('admin.konfirmasi');
-// });
-
-//payment gateway
-
-
-
-// web.php
-// Route::put('/api/konfirmasi/{id}', [PemesananController::class, 'confirm']);
-
-// Route::put('/selesai/{id}', [PemesananController::class, 'selesaikan']);
-
-// Route::get('/admin/dashboard', [PemesananController::class, 'adminIndex'])->name('admin.dashboard');
 
 Route::get('/verify-otp', [OtpController::class, 'show'])->name('otp.verify.page');
 Route::post('/verify-otp', [OtpController::class, 'verify'])->name('otp.verify');

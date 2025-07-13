@@ -79,8 +79,8 @@
 
     <!-- Promo Banner -->
     <div class="promo-banner">
-        <h2>Jadilah Member, Dapatkan Harga Spesial!</h2>
-        <p>Daftar atau login untuk menikmati promo eksklusif dari Salon Asih.</p>
+        <h2>Pesanan Layanan kamu dibawah!</h2>
+        <p>Nikmati layanan yang tersedia di salon asih</p>
     </div>
 
     <!-- Booking Section -->
@@ -106,10 +106,10 @@
                         <form method="POST" action="{{ route('pemesanan.store') }}">
                             @csrf
 
-                            <div class="mb-4">
+                            {{-- <div class="mb-4">
                                 <label class="block font-medium">Nama</label>
                                 <input type="text" name="name" class="w-full border rounded p-2" required>
-                            </div>
+                            </div> --}}
 
                             <div class="mb-4">
                                 <label class="block font-medium">Nomor HP</label>

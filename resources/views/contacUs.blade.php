@@ -67,8 +67,8 @@
 
    <!-- Promo Banner -->
   <div class="promo-banner">
-    <h2>Jadilah Member, Dapatkan Harga Spesial!</h2>
-    <p>Daftar atau login untuk menikmati promo eksklusif dari Salon Asih.</p>
+    <h2>Pesanan Layananmu Sekarang!</h2>
+    <p>Daftar atau login untuk Melanjutkan pemesanan dari salon kami</p>
   </div>
 
 <!-- Booking Section -->
